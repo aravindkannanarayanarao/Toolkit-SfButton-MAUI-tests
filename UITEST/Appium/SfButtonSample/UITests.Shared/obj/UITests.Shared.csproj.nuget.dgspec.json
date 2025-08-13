@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/SfButtonSample/UITests.Shared/UITests.Shared.csproj": {}
+  },
+  "projects": {
+    "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/SfButtonSample/UITests.Shared/UITests.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/SfButtonSample/UITests.Shared/UITests.Shared.csproj",
+        "projectName": "UITests.Shared",
+        "projectPath": "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/SfButtonSample/UITests.Shared/UITests.Shared.csproj",
+        "packagesPath": "/Users/aravindkannanarayanarao/.nuget/packages/",
+        "outputPath": "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/SfButtonSample/UITests.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/NuGet.Config",
+          "/Users/aravindkannanarayanarao/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/Users/aravindkannanarayanarao/Documents/Toolkit/GithubPublic/Toolkit-SfButton-MAUI-tests/UITEST/Appium/Nuget": {},
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.100-preview.6.25358.103/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

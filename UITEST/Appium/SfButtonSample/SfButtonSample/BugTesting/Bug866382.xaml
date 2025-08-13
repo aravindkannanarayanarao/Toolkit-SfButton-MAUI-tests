@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Bugs.Bug866382"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             Title="Bug866382">
+    
+    <ContentPage.Content>
+    <Grid ColumnDefinitions="*,*">
+        <ScrollView Grid.Column="0">
+            <VerticalStackLayout Spacing="10"  HorizontalOptions="FillAndExpand">
+                <Label Text="SfButton"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova" Clicked="SfButton_Clicked" />
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 1" Clicked="SfButton_Clicked" />
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 2"  Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 3" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 4" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 5" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 6" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 7" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 8" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 9" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 1" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 2" Clicked="SfButton_Clicked"/>
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 3" />
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 4" />
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 5" />
+                <buttons:SfButton HorizontalTextAlignment="Start" HeightRequest="48" Text="Prova 6" />
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ScrollView Grid.Column="1">
+            <VerticalStackLayout Spacing="10"  HorizontalOptions="FillAndExpand">
+                <Label Text="Button"/>
+                <Button HeightRequest="48" Text="Prova" />
+                <Button HeightRequest="48" Text="Prova 1" />
+                <Button HeightRequest="48" Text="Prova 2" />
+                <Button HeightRequest="48" Text="Prova 3"/>
+                <Button HeightRequest="48" Text="Prova 4" />
+                <Button HeightRequest="48" Text="Prova 5" />
+                <Button HeightRequest="48" Text="Prova 6" />
+                <Button HeightRequest="48" Text="Prova 7" />
+                <Button HeightRequest="48" Text="Prova 8" />
+                <Button HeightRequest="48" Text="Prova 9" />
+                <Button HeightRequest="48" Text="Prova 1" />
+                <Button HeightRequest="48" Text="Prova 2" />
+                <Button HeightRequest="48" Text="Prova 3" />
+                <Button HeightRequest="48" Text="Prova 4" />
+                <Button HeightRequest="48" Text="Prova 5" />
+                <Button HeightRequest="48" Text="Prova 6" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+
+
+    </ContentPage.Content>
+
+
+</ContentPage>

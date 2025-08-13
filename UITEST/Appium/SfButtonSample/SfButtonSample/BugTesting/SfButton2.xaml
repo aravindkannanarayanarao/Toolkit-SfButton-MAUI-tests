@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Bugs.SfButton2"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+            xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+            xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+            xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+            xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             Title="SfButton2">
+    <ContentPage.Resources>
+        <Style x:Key="imagebuttonstyle" TargetType="buttons:SfButton">
+            <Setter Property="ShowIcon" Value="True"/>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Start" Spacing="50">
+            <StackLayout HorizontalOptions="Center" 
+                     VerticalOptions="Center"
+                     BackgroundColor="Cyan">
+
+                <Label HorizontalTextAlignment="Center" 
+                BackgroundColor="OrangeRed"
+Text="NullReferenceException is thrown when setting the ShowIcon property in the Style using global resources"/>
+
+                <buttons:SfButton ImageSource="dotnet_bot.png"                                   
+                                 WidthRequest="40" 
+                                 HeightRequest="40" />
+
+                <buttons:SfButton ImageSource="dotnet_bot.png"                                   
+                                 WidthRequest="40" 
+                                 HeightRequest="40"
+                              Style="{StaticResource imagebuttonstyle}"/>
+
+                <buttons:SfButton ImageSource="dotnet_bot.png"                                   
+                                 WidthRequest="40" 
+                                 HeightRequest="40" />
+            </StackLayout>
+            <StackLayout BackgroundColor="Cyan">
+
+                <Label HorizontalTextAlignment="Center" 
+                BackgroundColor="OrangeRed"
+Text="Padding is not applied to the layout inside the content of SfButton"/>
+
+                <buttons:SfButton x:Name="button2" 
+                                  WidthRequest="300"
+                                  Clicked="button2_Clicked">
+                    <buttons:SfButton.Content>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label HeightRequest="40" 
+                                        TextColor="White"
+                                        Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </buttons:SfButton.Content>
+                </buttons:SfButton>
+            </StackLayout>
+            
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                BackgroundColor="OrangeRed"
+                Text=" SfButton throws exception when using content template in PopupView of SfPopupLayout"/>
+                
+                <buttons:SfButton WidthRequest="100" Text="Click to show popup"
+                                  HeightRequest="50"
+                                  Clicked="PopUpButton_Clicked" AutomationId="cl" SemanticProperties.Description="cl"/>
+                
+                <popup:SfPopup x:Name="popup" ShowFooter="True" ShowHeader="True">
+                    <popup:SfPopup.ContentTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="YellowGreen">
+                                <Label Text="Label Text"/>
+                                <buttons:SfButton Text="popup button" WidthRequest="100"
+                                                  HeightRequest="30"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </popup:SfPopup.ContentTemplate>
+                </popup:SfPopup>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                BackgroundColor="OrangeRed"
+Text="POPUP"/>
+            </StackLayout>
+        </VerticalStackLayout>
+        
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Bugs.SfButton1"
+             xmlns:local="clr-namespace:SfButtonSample"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             Title="SfButton1">
+    <ContentPage.BindingContext>
+        <local:BookInfoRepository />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+
+        <Style x:Key="labelSyle" TargetType="Label" >
+            <Setter Property="TextColor" Value="Green" />
+            <Setter Property="BackgroundColor" Value="Yellow" />
+        </Style>
+
+        <ResourceDictionary>
+            <Style TargetType="buttons:SfButton" x:Key="buttonStyle">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup>
+                            <VisualState Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="HotPink"/>
+                                    <Setter Property="TextColor" Value="White"/>
+                                    <Setter Property="Text" Value="button click"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Green"/>
+                                    <Setter Property="TextColor" Value="Red"/>
+                                    <Setter Property="Text" Value="button clicked"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="yellow"/>
+                                    <Setter Property="TextColor" Value="Blue"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Start" Spacing="50">
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+                       VerticalTextAlignment="Start"
+                       Text="[UWP] Button click should not be pas​se​d to its parent view when click event occurs."/>
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+       Text="[iOS] SfButton click forwarded to its parent"/>
+
+                <listview:SfListView x:Name="listView" ItemTapped="listView_ItemTapped"
+                                     ItemSize="50" SelectionChanged="listView_SelectionChanged"
+                                     ItemsSource="{Binding BookInfo}">
+                    <listview:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Button x:Name="buttonList"
+                                    WidthRequest="200" 
+                                    Text="{Binding BookName}" 
+                                    Clicked="buttonList_Clicked"/>
+                        </DataTemplate>
+                    </listview:SfListView.ItemTemplate>
+                </listview:SfListView>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label  HorizontalTextAlignment="Center" 
+                        VerticalTextAlignment="Start"
+                        BackgroundColor="OrangeRed"
+                    Text="SfButton is not measuring the height of it's content, preventing multiline labels from displaying correctly"
+                       />
+                <buttons:SfButton TextColor="White"  HeightRequest="50"
+                  Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+            </StackLayout>
+            
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+Text="Embedded font icon not showing in SfButton "/>
+
+                <buttons:SfButton Text="Test" ShowIcon="True" WidthRequest="300">
+
+                    <buttons:SfButton.ImageSource>
+
+                        <FontImageSource FontFamily="UIFontIcons" Glyph="&#xe700;" Size="20" Color="White" />
+
+                    </buttons:SfButton.ImageSource>
+
+                </buttons:SfButton>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+Text="Property Margin is mixed-up with Padding "/>
+                <Label HorizontalTextAlignment="Center"
+                       BackgroundColor="OrangeRed"
+Text="SfButton HorizontalTextAlignment does not work"/>
+
+                <buttons:SfButton WidthRequest="150"
+       Background="Green" FontSize="Small"
+       Text="MarginPadding"
+       Margin="10" Padding="5"
+       TextColor="White"/>
+                <buttons:SfButton WidthRequest="150" HorizontalTextAlignment="End"
+       Background="Green"
+       Text="MarginPadding"
+       Margin="10" Padding="5"
+       TextColor="White"/>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+Text="IsEnabled property not running via Binding in xaml. "/>
+
+                <Switch IsToggled="True" x:Name="switch"/>
+                <buttons:SfButton WidthRequest="200" Text="Basic Button" BindingContext="{x:Reference switch}" IsEnabled="{Binding IsToggled}"/>
+                <buttons:SfButton WidthRequest="200" Text="Checkable Button" BindingContext="{x:Reference switch}" IsEnabled="{Binding IsToggled}"/>
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+Text="BackgroundColor for SfButton changed when we set BackgroundColor to Label in implicit style" />
+
+
+                <Label Text="ImplicitSyles" Style="{StaticResource labelSyle}" 
+               HorizontalOptions="Center" 
+               VerticalTextAlignment="Center" 
+               HorizontalTextAlignment="Center" 
+               HeightRequest="30" 
+               WidthRequest="120"/>
+                <buttons:SfButton Text="SfButton" Background="Red" 
+                          TextColor="White"
+                          VerticalTextAlignment="End"
+                          HorizontalTextAlignment="End"
+                          HorizontalOptions="Center" 
+                          HeightRequest="40" 
+                          WidthRequest="120" />
+
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+   Text="SFButton takes whole height with Xamarin.Forms 4.8.0.1364 update "/>
+                
+                <buttons:SfButton HorizontalOptions="Center" 
+                                  VerticalOptions="Center" 
+                                  Text="Syncfusion Button"/>
+            </StackLayout>
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+        Text="[Android, iOS] Focus is not updated correctly while clicking on the SfButton"/>
+                
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+Text="[UWP] Automation id added with postfix Container "/>
+                
+                <inputs:SfNumericEntry WidthRequest="200"/>
+                <inputs:SfMaskedEntry WidthRequest="200"/>
+                <buttons:SfButton Text="click" x:Name="buttonid"
+               BackgroundColor="GreenYellow" Clicked="ButtonId_Clicked"
+               TextColor="White" AutomationId="Members#_1000"
+               WidthRequest="100"/>
+                <Label Text="Id" x:Name="labelID" HorizontalTextAlignment="Center" />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+               Text="Padding is not working properly for SfButton while using Triggers with ImageSource"/>
+                <Label HorizontalTextAlignment="Center" 
+                       BackgroundColor="OrangeRed"
+       Text="SfButton Text disappears after using ScaleTo "/>
+
+                <buttons:SfButton Text="click" x:Name="buttonimage" 
+          BackgroundColor="GreenYellow"
+          TextColor="White"
+          WidthRequest="100"
+          ImageSource="dog.jfif"
+          Clicked="ImageButton_Clicked"
+          ShowIcon="True" 
+          />
+            </StackLayout>
+
+            <StackLayout BackgroundColor="Cyan">
+                <Label HorizontalTextAlignment="Center"
+                       BackgroundColor="OrangeRed"
+                       Text="SfButton's VisualState is not changed to Normal while cancelling the Touch event in Android."/>
+                <Label HorizontalTextAlignment="Center"
+       BackgroundColor="OrangeRed"
+       Text="TextColor does not work for disabled visual state in SfButton"/>
+
+                <ScrollView>
+                    <VerticalStackLayout>
+                        <buttons:SfButton IsEnabled="False" Text="Button1" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button2" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button3" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button4" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button5" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button6" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button7" Style="{StaticResource Key=buttonStyle}"/>
+                        <buttons:SfButton Text="Button8" Style="{StaticResource Key=buttonStyle}"/>
+                    </VerticalStackLayout>
+                </ScrollView>
+                
+            </StackLayout>
+
+            <StackLayout>
+                <Label HorizontalTextAlignment="Center"
+BackgroundColor="OrangeRed"
+Text="Default background color for SfButton has been applied even with the disabled state"/>
+                <buttons:SfButton IsEnabled="False" Text="simple button" WidthRequest="100"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

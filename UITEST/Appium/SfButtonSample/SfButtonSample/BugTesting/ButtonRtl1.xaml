@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System.Collections.Generic;assembly=netstandard"
+             mc:Ignorable="d"
+    xmlns:Toolkitbuttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             x:Class="SfButtonSample.Bugs.ButtonRtl1"
+             Title="ButtonRtl1">
+    <ContentPage.Content>
+            <StackLayout x:Name="stack" Orientation="Vertical" >
+
+            <Toolkitbuttons:SfButton x:Name="SfButton" Text="Changeflow" AutomationId="Changeflow" SemanticProperties.Description="Changeflow" Clicked="SfButton_Clicked"   
+                              HorizontalOptions="StartAndExpand" WidthRequest="120"/>
+
+
+                <!--Button sample-->
+
+            <Toolkitbuttons:SfButton Background="Gold" WidthRequest="300" HeightRequest="50" Text="First">
+                
+                </Toolkitbuttons:SfButton>
+
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="Left" WidthRequest="150" ImageSource="avatar1.png"/>
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="Right" WidthRequest="150" ImageSource="alexander.png"/>
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="Start" WidthRequest="150" ImageSource="avatar10.png"/>
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="End" WidthRequest="150" ImageSource="alexander.png"/>
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="Bottom" WidthRequest="150" ImageSource="avatar1.png"/>
+            <Toolkitbuttons:SfButton Background="Pink" Text="Button" ShowIcon="True" ImageAlignment="Top" WidthRequest="150" ImageSource="avatar10.png"/>
+
+                <!--  End Button -->
+
+                <!-- Border sample --><!--
+                <border:SfBorder BorderColor="Red" BackgroundColor="#ffb6c1" HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="3">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="First" Margin="10" FontSize="15"  />
+                        <Label Text="Second" Margin="10" FontSize="15"  />
+                    </StackLayout>
+                </border:SfBorder>
+
+                <border:SfBorder BorderColor="Red" BackgroundColor="#ffb6c1" HorizontalOptions="Center" VerticalOptions="Center" BorderWidth="3">
+                    <Grid>
+                        <Label Text="First" Grid.Column="0" Margin="10" FontSize="15"  />
+                        <Label Text="Second" Grid.Column="1" Margin="10" FontSize="15"  />
+                    </Grid>
+                </border:SfBorder>-->
+                <!--  End Border -->
+
+                <!--************* Check box ******************-->
+
+                <StackLayout Orientation="Horizontal">
+                    <buttons:SfCheckBox Text="First" />
+                    <buttons:SfCheckBox Text="Second"/>
+                </StackLayout>
+                <!--************* Radio button ******************-->
+
+                <StackLayout Orientation="Horizontal">
+                    <buttons:SfRadioButton Text="First" />
+                    <buttons:SfRadioButton Text="Second"/>
+                </StackLayout>
+
+                <!--************* Radio group ******************-->
+
+                <buttons:SfRadioGroup Orientation="Horizontal">
+                    <buttons:SfRadioButton Text="First" />
+                    <buttons:SfRadioButton Text="Second"/>
+                </buttons:SfRadioGroup>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>

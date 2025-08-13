@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SfButtonSample.SBSample.GettingStartedDesktop"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:ev="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+    Title="GettingStartedDesktop">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="radialVisualStyle" TargetType="button:SfButton">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <RadialGradientBrush Radius="1.5">
+                                                <RadialGradientBrush.GradientStops>
+                                                    <GradientStop Offset="0.3" Color="#0D62D4" />
+                                                    <GradientStop Offset="1" Color="#9F3CDC" />
+                                                </RadialGradientBrush.GradientStops>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <RadialGradientBrush Radius="1">
+                                                <RadialGradientBrush.GradientStops>
+                                                    <GradientStop Offset="0" Color="#9F3CDC" />
+                                                    <GradientStop Offset="1" Color="#0D62D4" />
+                                                </RadialGradientBrush.GradientStops>
+                                            </RadialGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="Stroke" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="2" />
+            </Style>
+            <Style x:Key="linearVisualStyle" TargetType="button:SfButton">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush EndPoint="0,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Offset="0" Color="#9F3CDC" />
+                                                    <GradientStop Offset="1" Color="#0D62D4" />
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush EndPoint="0,1">
+                                                <LinearGradientBrush.GradientStops>
+                                                    <GradientStop Offset="0" Color="#0D62D4" />
+                                                    <GradientStop Offset="1" Color="#9F3CDC" />
+                                                </LinearGradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="Stroke" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="2" />
+            </Style>
+            <Style x:Key="sfButtonStyle" TargetType="button:SfButton">
+                <Setter Property="WidthRequest" Value="150" />
+                <Setter Property="HeightRequest" Value="50" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="StrokeThickness" Value="0" />
+                <Setter Property="Stroke" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130" />
+                        <RowDefinition Height="130" />
+                        <RowDefinition Height="130" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+
+                    <button:SfButton
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource sfButtonStyle}"
+                        Text="Primary Button"
+                        TextColor="White" />
+                    <button:SfButton
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Style="{StaticResource sfButtonStyle}">
+                        <button:SfButton.Content>
+                            <DataTemplate>
+                                <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Padding="0,0,5,0">
+                                        <Label
+                                            FontFamily="SegmentIcon"
+                                            FontSize="24"
+                                            HorizontalOptions="Start"
+                                            HorizontalTextAlignment="Center"
+                                            Text="&#xEB52;"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                    <Grid Grid.Column="1" Padding="0,15,15,15">
+                                        <Label
+                                            FontSize="15"
+                                            HeightRequest="20"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            LineBreakMode="NoWrap"
+                                            Text="Left Icon"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </button:SfButton.Content>
+                    </button:SfButton>
+                    <button:SfButton
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        CornerRadius="50"
+                        Style="{StaticResource sfButtonStyle}"
+                        WidthRequest="50">
+                        <button:SfButton.Content>
+                            <DataTemplate>
+                                <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Grid Grid.Column="1" Padding="5,0,5,0">
+                                        <Label
+                                            FontFamily="SegmentIcon"
+                                            FontSize="24"
+                                            HorizontalOptions="Start"
+                                            HorizontalTextAlignment="Center"
+                                            Text="&#xEB52;"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </button:SfButton.Content>
+
+                    </button:SfButton>
+                    <button:SfButton
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        CornerRadius="25,50,25,50"
+                        Style="{StaticResource linearVisualStyle}"
+                        Text="Linear Gradient"
+                        TextColor="White" />
+                    <button:SfButton
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Background="#D8D6D7"
+                        Style="{StaticResource sfButtonStyle}"
+                        Text="Normal Button" />
+                    <button:SfButton
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Background="White"
+                        CornerRadius="0"
+                        Stroke="Blue"
+                        StrokeThickness="2"
+                        Style="{StaticResource sfButtonStyle}"
+                        Text="Outline Button"
+                        TextColor="Blue" />
+                    <button:SfButton
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Style="{StaticResource sfButtonStyle}">
+                        <button:SfButton.Content>
+                            <DataTemplate>
+
+                                <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Padding="15,15,0,15">
+                                        <Label
+                                            FontSize="15"
+                                            HeightRequest="20"
+                                            HorizontalOptions="Start"
+                                            HorizontalTextAlignment="Start"
+                                            LineBreakMode="NoWrap"
+                                            Text="Right Icon"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                    <Grid Grid.Column="1" Padding="5,0,5,0">
+                                        <Label
+                                            FontFamily="SegmentIcon"
+                                            FontSize="24"
+                                            HorizontalOptions="Start"
+                                            HorizontalTextAlignment="Center"
+                                            Text="&#xEB52;"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+
+                                </Grid>
+
+                            </DataTemplate>
+                        </button:SfButton.Content>
+                    </button:SfButton>
+                    <button:SfButton
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Background="White"
+                        CornerRadius="25"
+                        HeightRequest="50"
+                        StrokeThickness="0"
+                        Style="{StaticResource sfButtonStyle}"
+                        WidthRequest="50">
+                        <button:SfButton.Content>
+                            <DataTemplate>
+                                <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                                    <Grid Grid.Column="1" Padding="5,0,5,0">
+                                        <Label
+                                            FontFamily="SegmentIcon"
+                                            FontSize="24"
+                                            HorizontalOptions="Start"
+                                            HorizontalTextAlignment="Center"
+                                            Text="&#xEB52;"
+                                            TextColor="Black"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </Grid>
+                                </Grid>
+                            </DataTemplate>
+                        </button:SfButton.Content>
+                    </button:SfButton>
+                    <button:SfButton
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        CornerRadius="25"
+                        Style="{StaticResource radialVisualStyle}"
+                        Text="Radial Gradient"
+                        TextColor="White" />
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

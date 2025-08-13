@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Bugs.Bug856303"
+             Title="Bug856303"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:listview="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+             xmlns:local="clr-namespace:SfButtonSample;assembly=SfButtonSample">
+
+    <ContentPage.BindingContext>
+        <local:CommandDemoViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+
+        <Button Command="{Binding TestCommand}" Text="Test" AutomationId="te" />
+
+        <Button Command="{Binding LivraisonsJourCommand}" Text="First Button" />
+
+        <Button Command="{Binding LivraisonsJourCommand}" Text="Second Button" />
+
+        <buttons:SfButton
+            Command="{Binding TestCommand}"
+            CornerRadius="3"
+            FontSize="26"
+            Text="TEST"
+            TextColor="White" />
+
+
+
+        <buttons:SfButton
+            Command="{Binding LivraisonsJourCommand}"
+            CornerRadius="3"
+            FontSize="26"
+            Text="LIVRAISON JOUR"
+            TextColor="{Binding TextColor}">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Background" Value="#3F89C4" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="Background" Value="LightGray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </buttons:SfButton>
+
+        <buttons:SfButton
+            Command="{Binding LivraisonsJourCommand}"
+            CornerRadius="3"
+            FontSize="26"
+            Text="LIVRAISON JOUR"
+            TextColor="White">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Background" Value="#3F89C4" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter Property="Background" Value="LightGray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </buttons:SfButton>
+
+        <!--<buttons:SfButton
+            Clicked="SfButton_Clicked"
+            Text="Hello"
+            TextColor="Red" />
+        <buttons:SfButton
+            x:Name="button"
+            Margin="10"
+            Command="{Binding StartWorkoutCommand}"
+            CornerRadius="25"
+            HeightRequest="40"
+            Text="SfButton">
+            <buttons:SfButton.Content>
+                <DataTemplate>
+                    <Grid
+                        HorizontalOptions="Center"
+                        IsVisible="{Binding ShowStartButton}"
+                        VerticalOptions="Center">
+                        <Image Source="alexander.png" />
+                    </Grid>
+                </DataTemplate>
+            </buttons:SfButton.Content>
+        </buttons:SfButton>-->
+    </StackLayout>
+
+</ContentPage>

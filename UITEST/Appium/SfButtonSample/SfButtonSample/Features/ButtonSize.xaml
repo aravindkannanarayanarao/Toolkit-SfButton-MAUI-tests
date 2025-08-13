@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Features.ButtonSize"
+    xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             Title="ButtonSize">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="5, 30, 5, 20">
+            <Label Text="Login" HorizontalTextAlignment="Center" FontSize="Large"/>
+            <Label LineBreakMode="WordWrap" Margin="30, 15,30, 15" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis sodales cursus. Fusce nec nulla urna." HorizontalTextAlignment="Center"/>
+            <Entry  Text=" Email" BackgroundColor="#FFFFFF" Placeholder="Enter a Email Id" Margin="5" PlaceholderColor="#949494" HeightRequest="50" WidthRequest="300" AutomationId="em"/>
+            <Entry   IsPassword="True" Text="Password" BackgroundColor="#FFFFFF" Placeholder="Enter a Password" Margin="5" PlaceholderColor="Gold" HeightRequest="50" WidthRequest="300" AutomationId="ps"/>
+            <buttons:SfButton  Background="AntiqueWhite" Text="Forgot Password?" HeightRequest="50" WidthRequest="100" TextColor="Red"/>
+            <buttons:SfButton  Background="BlueViolet" Text="Login" HeightRequest="100" WidthRequest="300" TextColor="#FFFFFF"/>
+            <Label Margin="15" Text="Or login with" HorizontalTextAlignment="Center" TextColor="#949494"/>
+            <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="0" Padding="10">
+                <buttons:SfButton ShowIcon="True" ImageSource="a0.png" BackgroundColor="Transparent"/>
+                <buttons:SfButton ShowIcon="True" ImageSource="b2.png" BackgroundColor="Transparent"/>
+                <buttons:SfButton ShowIcon="True" ImageSource="b3.png" BackgroundColor="Transparent"/>
+            </StackLayout>-->
+            <buttons:SfButton CornerRadius="1" ShowIcon="True" Background="Transparent" HeightRequest="50" WidthRequest="300"/>
+            <Label Text="Use Fingerprint" HorizontalTextAlignment="Center" TextColor="#5A5A5A"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

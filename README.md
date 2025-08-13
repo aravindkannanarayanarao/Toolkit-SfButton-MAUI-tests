@@ -1,2 +1,2 @@
-# Toolkit-SfButton-MAUI-tests
-
+# SfButton-MAUI-tests
+SfButton-MAUI-tests

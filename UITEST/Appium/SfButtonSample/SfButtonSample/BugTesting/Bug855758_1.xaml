@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SfButtonSample.Bugs.Bug855758_1"
+    xmlns:buttons="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+             Title="Bug855758_1">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+
+
+
+        <!--<buttons:SfButton
+            Clicked="SfButton_Clicked"
+            Text="Hello"
+            TextColor="Red" />-->
+        <buttons:SfButton
+            x:Name="button"
+            Margin="10"
+            Command="{Binding StartWorkoutCommand}"
+            CornerRadius="25"
+            HeightRequest="40"
+            IsVisible="{Binding ShowStartButton}"
+            Text="SfButton">
+            <buttons:SfButton.Content>
+                <DataTemplate>
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="alexander.png" AutomationId="img" />
+                    </Grid>
+                </DataTemplate>
+            </buttons:SfButton.Content>
+        </buttons:SfButton>
+    </StackLayout>
+
+</ContentPage>
+
+

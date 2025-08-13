@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SfButtonSample.Features.Features"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:busy="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+    xmlns:chip="clr-namespace:Syncfusion.Maui.Toolkit.Buttons;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:local="clr-namespace:SfButtonSample.ViewModel"
+    Title="Features">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="happyTemplate">
+                <HorizontalStackLayout HeightRequest="60">
+                    <busy:SfBusyIndicator
+                        AnimationType="Cupertino"
+                        HeightRequest="60"
+                        HorizontalOptions="End"
+                        IndicatorColor="White"
+                        IsRunning="True"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        WidthRequest="80" />
+                    <Label
+                        FontSize="20"
+                        HorizontalOptions="Start"
+                        Text="Loading..."
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </DataTemplate>
+            <Style TargetType="Label">
+                <Setter Property="Padding" Value="20,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:ButtonViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            <VerticalStackLayout Margin="30">
+                <chip:SfButton
+                    x:Name="chip"
+                    Padding="{Binding Padding}"
+                    Background="{Binding Background}"
+                    BackgroundImageSource="{Binding BackgroundImage}"
+                    Command="{Binding Command}"
+                    CommandParameter="{Binding CommandParameter}"
+                    CornerRadius="{Binding CornerRadius}"
+                    DashArray="{Binding DashArray}"
+                    FontAttributes="{Binding FontAttributes}"
+                    FontSize="{Binding FontSize}"
+                    HorizontalTextAlignment="{Binding HorizontalTextAlignment}"
+                    ImageAlignment="{Binding ImageAlignment}"
+                    ImageSize="{Binding ImageWidth}"
+                    ImageSource="{Binding ImageSource}"
+                    ShowIcon="{Binding ShowIcon}"
+                    Stroke="{Binding BorderColor}"
+                    StrokeThickness="{Binding StrokeThickness}"
+                    Text="{Binding Text}"
+                    TextColor="{Binding TextColor}"
+                    VerticalTextAlignment="{Binding VerticalTextAlignment}"
+                    TextTransform="{Binding TextTransforms}"
+                    WidthRequest="300"  AutomationId="text" SemanticProperties.Description="text"/>
+            </VerticalStackLayout>
+            <StackLayout Grid.Row="1">
+                <Grid ColumnDefinitions="*,*,*,*">
+                    <Grid Grid.Column="0" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*">
+                        <Label Text="Enter any Name" />
+                        <Entry Grid.Column="1" Text="{Binding Text}" AutomationId="name" />
+
+                        <Label Grid.Row="1" Text="Text Color" />
+                        <Picker Grid.Row="1" Grid.Column="1" ItemsSource="{Binding TextColorList}" SelectedIndex="{Binding TextColorSelectedIndex}" AutomationId="TextColor" />
+
+                        <Label Grid.Row="2" Text="Show Icon" />
+                        <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding ShowIcon}" AutomationId="ShowIcon" />
+
+                        <Label Grid.Row="3" Text="ImageSource" />
+                        <Picker Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ImageSourceList}" SelectedIndex="{Binding ImageSourceSelectedIndex}" AutomationId="imagesource" />
+
+                        <Label Grid.Row="4" Text="Image Width" />
+                        <!--<Slider  Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" Maximum="35" Minimum="18" WidthRequest="100" Value="{Binding ImageWidth}" AutomationId="ImageWidthslider" />-->
+                        <Entry Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" Text="{Binding ImageWidth}" AutomationId="ImageWidthslider" SemanticProperties.Description="ImageWidthslider"/>
+                        
+                    </Grid>
+                    <Grid Grid.Column="1" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*">
+                        <Label Grid.Row="0" Text="Corner Radius" />
+                        <!--<Slider Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Maximum="15" Minimum="0" WidthRequest="100" Value="{Binding CornerRadiusSlider}" AutomationId="CornerRadiusslider" />-->
+                        <Entry Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Text="{Binding CornerRadiusSlider}" AutomationId="CornerRadiusslider" SemanticProperties.Description="CornerRadiusslider"/>
+                        
+                        <Label Grid.Row="1" Text="Border Color" />
+                        <Picker Grid.Row="1" Grid.Column="1" ItemsSource="{Binding BorderColorList}" SelectedIndex="{Binding BorderSelectedIndex}" AutomationId="BorderColor" />
+
+                        <Label Grid.Row="2" Text="StrokeThickness" />
+                        <!--<Slider Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Maximum="15" Minimum="0" WidthRequest="100" Value="{Binding ThicknessSlider}" AutomationId="thicknessslider" />-->
+                        <Entry Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="{Binding ThicknessSlider}" AutomationId="thicknessslider" SemanticProperties.Description="thicknessslider"/>
+                        
+                        <Label Grid.Row="3" Text="Padding" />
+                        <!--<Slider Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Maximum="15" Minimum="0" WidthRequest="100" Value="{Binding PaddingSlider}" AutomationId="paddingslider"/>-->
+                        <Entry Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="{Binding PaddingSlider}" AutomationId="paddingslider" SemanticProperties.Description="paddingslider"/>
+
+                        <Label Grid.Row="4" Text="Image Alignment" />
+                        <Picker Grid.Row="4" Grid.Column="1" ItemsSource="{Binding ImageAlignmentList}" SelectedIndex="{Binding ImageAlignmentSelectedIndex}" AutomationId="image" />
+                    </Grid>
+                    <Grid Grid.Column="2" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*">
+                        <Label Grid.Row="0" Text="FontSize" />
+                        <!--<Slider Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Maximum="30" Minimum="14" WidthRequest="100" Value="{Binding FontSize}" AutomationId="fontsizeslider"/>-->
+                        <Entry Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Text="{Binding FontSize}" AutomationId="fontsizeslider" SemanticProperties.Description="fontsizeslider"/>
+                        
+                        <Label Grid.Row="1" Text="FontAttributes" />
+                        <Picker Grid.Row="1" Grid.Column="1" ItemsSource="{Binding FontAttributesList}" SelectedIndex="{Binding FontAttributesSelectedIndex}" AutomationId="Attribute" />
+
+                        <Label Grid.Row="2" Text="BackgroundImage" />
+                        <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding IsCheckedBackgroundImage}" AutomationId="backgroundimage" />
+
+                        <Label Grid.Row="3" Text="HorizontalTextAlignment" />
+                        <Picker Grid.Row="3" Grid.Column="1" ItemsSource="{Binding TextAlignmentList}" SelectedIndex="{Binding HorizontalTextAlignmentSelectedIndex}" AutomationId="HorizontalText" />
+
+                        <Label Grid.Row="4" Text="VerticalTextAlignment" />
+                        <Picker Grid.Row="4" Grid.Column="1" ItemsSource="{Binding TextAlignmentList}" SelectedIndex="{Binding VerticalTextAlignmentSelectedIndex}" AutomationId="VerticalText" />
+                    </Grid>
+                    <Grid Grid.Column="3" ColumnDefinitions="*,*" RowDefinitions="*,*,*,*,*,*,*,*,*,*,*">
+                        <Label Grid.Row="0" Text="Command" />
+                        <Label Grid.Row="0" Grid.Column="1"  Padding="0,0,0,0" FontAttributes="Bold" HorizontalOptions="Start" Text="{Binding CommandText}" />
+
+                        <Label Grid.Row="1" Text="Content" />
+                        <CheckBox x:Name="check" Grid.Row="1" Grid.Column="1"  CheckedChanged="CheckBox_CheckedChanged" AutomationId="contenT" />
+
+                        <Label Grid.Row="2" Text="DashArray" />
+                        <CheckBox Grid.Row="2" Grid.Column="1" CheckedChanged="CheckBox_CheckedChanged_1" AutomationId="dasharray" />
+
+                        <Label Grid.Row="3" Text="Background" />
+                        <Picker Grid.Row="3" Grid.Column="1"  ItemsSource="{Binding BackgroundList}" SelectedIndex="{Binding BackgroundSelectedIndex}" AutomationId="background" />
+
+                        <Label Grid.Row="4" Text="TextTransform" />
+                        <Picker Grid.Row="4" Grid.Column="1" ItemsSource="{Binding TextTransformList}" SelectedIndex="{Binding TextTransformListSelectedIndex}" />
+
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+
+    </ContentPage.Content>
+</ContentPage>
