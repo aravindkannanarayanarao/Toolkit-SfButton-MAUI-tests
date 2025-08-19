@@ -25,72 +25,72 @@ namespace SfButtonScripts
             Basicsbutton("ButtonInitial");
             Thread.Sleep(2000); TakeAndCompareScreenshot("ButtonInitial");
         }
-//         [Test]
-//         [Category("Basic Button size")]
+        [Test]
+        [Category("Basic Button size")]
 
-//         public void ButtonSize()
-//         {
-//             Basicsbutton("ButtonSize");
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("ButtonSize");
-//         }
-//         [Test]
-//         [Category("Command")]
+        public void ButtonSize()
+        {
+            Basicsbutton("ButtonSize");
+            Thread.Sleep(2000); TakeAndCompareScreenshot("ButtonSize");
+        }
+        [Test]
+        [Category("Command")]
 
-//         public void Command1()
-//         {
-//             Basicsbutton("CommandSample");
-//            // App.WaitForElement("Command");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("Command1");
-//         }
-//         [Test]
-//         [Category("Command parameter")]
+        public void Command1()
+        {
+            Basicsbutton("CommandSample");
+           // App.WaitForElement("Command");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            Thread.Sleep(2000); TakeAndCompareScreenshot("Command1");
+        }
+        [Test]
+        [Category("Command parameter")]
 
-//         public void Commandparameter()
-//         {
-//             Basicsbutton("CommandSample");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmd");
-//             App.Tap("cmdp");
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("Commandparameter");
-//         }
-//         [Test]
-//         [Category("IsBusyFeature")]
+        public void Commandparameter()
+        {
+            Basicsbutton("CommandSample");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmd");
+            App.Tap("cmdp");
+            Thread.Sleep(2000); TakeAndCompareScreenshot("Commandparameter");
+        }
+        [Test]
+        [Category("IsBusyFeature")]
 
-//         public void IsBusyFeature()
-//         {
-//             Basicsbutton("IsBusyFeature");
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("IsBusyFeature");
-//         }
-//         [Test]
-//         [Category("place holder text")]
+        public void IsBusyFeature()
+        {
+            Basicsbutton("IsBusyFeature");
+            Thread.Sleep(2000); TakeAndCompareScreenshot("IsBusyFeature");
+        }
+        [Test]
+        [Category("place holder text")]
 
-//         public void placeholdertext()
-//         {
-//             Basicsbutton("ButtonSize");
-//             //App.Tap("em");
-//             App.ClearText("em");
-//             App.DismissKeyboard();
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("placeholdertext");
-//         }
-//         [Test]
-//         [Category("place holder textcolor")]
+        public void placeholdertext()
+        {
+            Basicsbutton("ButtonSize");
+            //App.Tap("em");
+            App.ClearText("em");
+            App.DismissKeyboard();
+            Thread.Sleep(2000); TakeAndCompareScreenshot("placeholdertext");
+        }
+        [Test]
+        [Category("place holder textcolor")]
 
-//         public void placeholdertextcolor()
-//         {
-//             Basicsbutton("ButtonSize");
-//             //App.Tap("ps");
-//             App.ClearText("ps");
-//             App.DismissKeyboard();
-//             Thread.Sleep(2000); TakeAndCompareScreenshot("placeholdertextcolor");
-//         }
+        public void placeholdertextcolor()
+        {
+            Basicsbutton("ButtonSize");
+            //App.Tap("ps");
+            App.ClearText("ps");
+            App.DismissKeyboard();
+            Thread.Sleep(2000); TakeAndCompareScreenshot("placeholdertextcolor");
+        }
 //         [Test]
 //         [Category("Visualstate")]
 
