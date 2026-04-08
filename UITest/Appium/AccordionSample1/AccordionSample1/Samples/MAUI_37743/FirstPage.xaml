@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AccordionSample1.MAUI_37743.FirstPage"
-             Title="FirstPage">
-    <ContentPage.Content>
-        <Button Text="Go to Accordion" Clicked="Button_Clicked"/>
-    </ContentPage.Content>
-</ContentPage>
