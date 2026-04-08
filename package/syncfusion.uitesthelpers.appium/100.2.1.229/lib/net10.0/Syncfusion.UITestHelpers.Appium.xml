@@ -1,0 +1,1494 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.UITestHelpers.Appium</name>
+    </assembly>
+    <members>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.RightClickChatMessage(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32)">
+            <summary>
+            Right-click (context click) a chat message in the Windows chat sample.
+            Finds a visible element whose text contains <paramref name="messageText"/> and performs a context click.
+            Throws a <see cref="T:OpenQA.Selenium.NoSuchElementException"/> when the message isn't found.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DragByCoordinatesWithDelayUsingGestures(Syncfusion.UITestHelpers.Core.IApp,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Long-press using Appium's mobile longClickGesture, then drag to end coordinates.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearAndEnterTextiOS(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Clears any existing text in the specified element and then enters the provided text.
+            Robustly handles iOS specific issues where <c>.Clear()</c> may not completely remove the
+            content by sending <see cref="F:OpenQA.Selenium.Keys.Delete"/> keystrokes as a fall-back.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target element identifier.</param>
+            <param name="text">Text to enter after clearing.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearAndEnterTextiOS(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.String)">
+            <summary>
+            Clears any existing text in the element found by the given query and then enters the provided text (iOS only).
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearAndEnterTextiOS(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IUIElement,System.String)">
+            <summary>
+            Internal helper that performs the clear and enter operations on the given iOS element.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TouchHoldDragDrop(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Int32)">
+            <summary>
+            Combines a touch-and-hold on a source element followed by a drag-and-drop onto a target element.
+            </summary>
+            <param name="app">Main gateway to interact with the app.</param>
+            <param name="sourceElement">The element to touch and hold, then drag from.</param>
+            <param name="targetElement">The element to drop onto.</param>
+            <param name="holdDurationMs">Optional hold duration in milliseconds before starting the drag (default 500ms).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearAndEnterTextInGridCellIOS1(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.String,System.Int32,System.Int32)">
+            <summary>
+            iOS DataGrid helper: taps a cell by coordinates, clears existing text, and enters new text.
+            Requires no XPath; relies on focusing the in-place editor after tapping the cell.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The X screen coordinate of the DataGrid cell.</param>
+            <param name="y">The Y screen coordinate of the DataGrid cell.</param>
+            <param name="text">The text to enter after clearing.</param>
+            <param name="focusWaitMs">Optional wait after tapping to allow the editor to focus. Default 300ms.</param>
+            <param name="clearLength">Optional explicit number of backspaces to send when clearing; 0 auto-detects.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SendKeysToFocusedIOS(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32,System.Boolean)">
+            <summary>
+            Sends backspaces and text to the currently focused iOS editor using keyboard-level events.
+            Avoids XPath/element lookups; assumes the editor is focused and keyboard is visible.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearAndEnterTextInGridCellIOS(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.String,System.Int32,System.Int32)">
+            <summary>
+            iOS DataGrid: tap a cell by coordinates, clear existing value with backspaces, and type new text.
+            No XPath required; focuses the in-place editor via taps and uses keyboard-level input.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SelectFromAutoCompleteIOSByText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.String,System.Int32)">
+            <summary>
+             MAUI iOS: Type into an AutoComplete field and select a suggestion by its visible text.
+             No XPath/NSPredicate. Uses framework FindElementByText helpers only.
+             </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterTextInChatField(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Int32)">
+            <summary>
+            Enters text into the Chat input field by locating the input using its placeholder text.
+            Tries common strategies across platforms (accessibility id, text/hint on Android, value on iOS).
+            </summary>
+            <param name="app">The IApp instance.</param>
+            <param name="placeholder">Visible placeholder or hint text of the chat input.</param>
+            <param name="text">Text to enter into the chat input.</param>
+            <param name="timeoutSeconds">Optional timeout to search for the input.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DumpWindowsTextInputs(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Diagnostic: enumerate Windows text inputs (Edit/TextBox) and report Name, AutomationId, HelpText and Value attributes.
+            Call this from a Windows test to inspect the UI tree and identify correct placeholder/automation id.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapAllowedViewByName(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Attempts to tap a UI element in the app by its name, if it is both visible and enabled.
+            </summary>
+            <param name="app">Represents the main gateway to interact with the app.</param>
+            <param name="viewName">The name of the UI element to be tapped.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown when the Appium driver is not available.</exception>
+            <exception cref="T:OpenQA.Selenium.ElementNotInteractableException">Thrown when the element is found but not visible or enabled.</exception>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException">Caught and logged when the element is not found.</exception>
+            <exception cref="T:System.Exception">Any other exceptions are logged and rethrown.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Option(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Taps the option button in the app using its accessibility ID.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.OpenSample(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Opens a specific sample in the application by finding and clicking an element with the given accessibility ID,
+            then waits for a target UI element to become visible to confirm that the page has loaded successfully.
+            </summary>
+            <param name="app">The IApp instance (expected to be castable to AppiumApp).</param>
+            <param name="sampleName">The accessibility ID of the sample to open.</param>
+            <param name="waitElement">The accessibility ID of the element to wait for after navigation.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the Appium driver is null.</exception>
+            <exception cref="T:System.Exception">Logs and rethrows any unexpected exception encountered during execution.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.OpenSample(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Opens a specific sample in the application by finding and clicking an element with the given accessibility ID,
+            then waits for a target UI element to become visible to confirm that the page has loaded successfully.
+            </summary>
+            <param name="app">The IApp instance (expected to be castable to AppiumApp).</param>
+            <param name="sampleName">The accessibility ID of the sample to open.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the Appium driver is null.</exception>
+            <exception cref="T:System.Exception">Logs and rethrows any unexpected exception encountered during execution.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.HomeBtn(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Navigates to the home screen by tapping the back button using its accessibility ID.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapButton(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32)">
+            <summary>
+            Taps a button with the specified accessibility ID a given number of times.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="buttonID">The accessibility ID of the button to tap.</param>
+            <param name="endLimit">The number of times to tap the button.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapButton(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Taps a button with the specified accessibility ID.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="buttonID">The accessibility ID of the button to tap.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.iOSDone(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Taps the 'Done' button on iOS using its XPath.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.iOSPickerInteract(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Interacts with an iOS picker control by selecting a specified value and tapping the 'Done' button.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="pickerAutomationId">The automation ID of the picker control.</param>
+            <param name="valueToSelect">The value to select in the picker.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.iOSPickerInteracts(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Interacts with an iOS picker control by selecting a specified value and tapping the 'Done' button.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="pickerAutomationId">The automation ID of the picker control.</param>
+            <param name="valueToSelect">The value to select in the picker.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.XpathTap(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Extension method for IApp to perform a tap action on a UI element identified by an XPath expression.
+            </summary>
+            <param name="app">The IApp instance, expected to be of type AppiumApp.</param>
+            <param name="xpath">The XPath string used to locate the UI element.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if the Appium driver is null.</exception>
+            <exception cref="T:System.Exception">jhbhj</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Tap(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            For desktop, this will perform a mouse click on the target element.
+            For mobile, this will tap the element.
+            This API works for all platforms whereas TapCoordinates currently doesn't work on Catalyst
+            https://github.com/dotnet/maui/issues/19754
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Tap(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            For desktop, this will perform a mouse click on the target element.
+            For mobile, this will tap the element.
+            This API works for all platforms whereas TapCoordinates currently doesn't work on Catalyst
+            https://github.com/dotnet/maui/issues/19754
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Click(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a mouse click on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Click(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Performs a mouse click on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.RightClick(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a right mouse click on the specified element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressDown(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a down/press on the matched element, without a matching release
+            </summary>
+            <param name="app"></param>
+            <param name="element"></param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetText(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Gets the text content of the specified UI element.
+            </summary>
+            <param name="element">The UI element to retrieve text from.</param>
+            <returns>The text content of the element, or null if not available.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAttribute``1(Syncfusion.UITestHelpers.Core.IUIElement,System.String)">
+            <summary>
+            Gets the value of the specified attribute from the UI element.
+            </summary>
+            <typeparam name="T">The type of the attribute value to return.</typeparam>
+            <param name="element">The UI element from which to retrieve the attribute.</param>
+            <param name="attributeName">The name of the attribute to retrieve.</param>
+            <returns>The value of the specified attribute, or null if not available.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetNativePageSource(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Return the current page source of the displayed view.
+            Useful to inspect the current view hierarchy and its automation ids.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoesElementExist(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Assert an element exists and is visible.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.FindVisibleElementByText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32)">
+            <summary>
+            Assert an element found by text exists and is visible.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapWithDelay(Syncfusion.UITestHelpers.Core.IUIElement,System.Int32)">
+            <summary>
+            Tap then wait a short period of time for other elements to load.
+            /// <param name="delayInMilliseconds">Amount of time to wait in milliseconds.</param>
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapByText(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Tap an element by its text.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetRect(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Gets the bounding rectangle of the specified UI element.
+            </summary>
+            <param name="element">The UI element to retrieve the rectangle from.</param>
+            <returns>The bounding <see cref="T:System.Drawing.Rectangle"/> of the element.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsSelected(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Determine if a form or form-like element (checkbox, select, etc...) is selected.
+            </summary>
+            <param name="element">Target Element.</param>
+            <returns>Whether the element is selected (boolean).</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsDisplayed(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Determine if an element is currently displayed.
+            </summary>
+            <param name="element">Target Element.</param>
+            <returns>Whether the element is displayed (boolean).</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsEnabled(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Determine if an element is currently enabled.
+            </summary>
+            <param name="element">Target Element.</param>
+            <returns>Whether the element is enabled (boolean).</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterTextIntoCustomField(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Enters text into a custom input control (e.g., Syncfusion SfNumericTextBox) by locating 
+            the associated editable field (EditText) nested inside a parent container identified 
+            by its accessibility ID (content-desc).
+            </summary>
+            <param name="accessibilityId">The accessibility ID (SemanticProperties.Description) of the parent container view.</param>
+            <param name="value">The text value to enter into the EditText field.</param>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException">Thrown if the container or EditText element is not found.</exception>
+            <exception cref="T:OpenQA.Selenium.InvalidElementStateException">Thrown if the target element cannot accept input.</exception>
+            <exception cref="T:OpenQA.Selenium.InvalidElementStateException">Cannot set the element to 'T'. Did you interact with the correct element?.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearTextIntoCustomField(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Clear text into a custom input control (e.g., Syncfusion SfNumericTextBox) by locating 
+            the associated editable field (EditText) nested inside a parent container identified 
+            by its accessibility ID (content-desc).
+            </summary>
+            <param name="accessibilityId">The accessibility ID (SemanticProperties.Description) of the parent container view.</param>
+            <param name="value">The text value to clear into the EditText field.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SelectFromComboBox(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Single,System.Single)">
+            <summary>
+            Selects a specified item from a ComboBox control by first tapping the dropdown button
+            and then choosing the desired value from the displayed list.
+            </summary>
+            <param name="accessibilityId">The accessibility ID of the ComboBox container.</param>
+            <param name="valueToSelect">The visible text of the item to select from the dropdown list.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SelectFromComboBox(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Single,System.Single)">
+            <summary>
+            Selects a specified item from a ComboBox control by first tapping the dropdown button
+            and then choosing the desired value from the displayed list.
+            </summary>
+            <param name="accessibilityId">The accessibility ID of the ComboBox container.</param>
+            <param name="valueToSelect">The visible text of the item to select from the dropdown list.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SelectFromAutoComplete(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Single,System.Single)">
+            <summary>
+            Types into an AutoComplete input field and selects the matching suggestion from the dropdown list.
+            Useful for controls that display suggestions dynamically based on typed text.
+            </summary>
+            <param name="accessibilityId">The accessibility ID of the AutoComplete input field.</param>
+            <param name="valueToType">The partial or full text to type into the input field to trigger suggestions.</param>
+            <param name="valueToSelect">The visible text of the suggestion to select from the dropdown list.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Enters text into the element identified by the query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+            <param name="text">The text to enter.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterTextiOS(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Enters text into the specified element on iOS.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target element identifier.</param>
+            <param name="text">The text to enter.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterText(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.String)">
+            <summary>
+            Enters text into the element identified by the query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterTextiOS(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.String)">
+            <summary>
+            Enters text into the specified element on iOS using a query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identifies an element by parameters such as type, text it contains or identifier.</param>
+            <param name="text">The text to enter.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DismissKeyboard(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Hides soft keyboard if present.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsKeyboardShown(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Whether or not the soft keyboard is shown.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <returns>true if the soft keyboard is shown; otherwise, false.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SendKeys(Syncfusion.UITestHelpers.Core.IApp,System.Int32,System.Int32)">
+            <summary>
+            (Android Only) Sends a device key event with meta state.
+            </summary>
+            <param name="app"></param>
+            <param name="keyCode"> Code for the key pressed on the Android device</param>
+            <param name="metastate">metastate for the key press</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearText(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Clears text from the currently focused element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClearText(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Clears text from the currently focused element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Click(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Performs a mouse click on the matched element.
+            </summary>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Tap(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            For desktop, this will perform a mouse click on the target element.
+            For mobile, this will tap the element.
+            This API works for all platforms whereas TapCoordinates currently doesn't work on Catalyst
+            https://github.com/dotnet/maui/issues/19754
+            </summary>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoubleClick(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a mouse double click on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoubleClickCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs a mouse double click on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to double click.</param>
+            <param name="y">The y coordinate to double click.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoubleTap(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs two quick tap / touch gestures on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoubleTap(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Performs two quick tap / touch gestures on the matched element by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query"></param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DoubleTapCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs two quick tap / touch gestures on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to double tap.</param>
+            <param name="y">The y coordinate to double tap.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.LongPress(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a long mouse click on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TouchAndHold(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a continuous touch gesture on the matched element.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target Element.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TouchAndHold(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Performs a continuous touch gesture on an element matched by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TouchAndHoldCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs a continuous touch gesture on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to touch.</param>
+            <param name="y">The y coordinate to touch.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DragAndDrop(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Performs a long touch on an item, followed by dragging the item to a second item and dropping it.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="dragSource">Element to be dragged.</param>
+            <param name="dragTarget">Element to be dropped.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DragAndDrop(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Performs a long touch on an item, followed by dragging the item to a second item and dropping it.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="dragSource">Represents the query that identify a source element by parameters such as type, text it contains or identifier.</param>
+            <param name="dragTarget">Represents the query that identify a target element by parameters such as type, text it contains or identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PinchToZoomIn(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Performs a pinch gestures on the matched element to zoom the view in. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Element to zoom in.</param>
+            <param name="duration">The TimeSpan duration of the pinch gesture.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PinchToZoomInCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.Nullable{System.TimeSpan})">
+            <summary>
+            Performs a pinch gestures to zoom the view in on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate of the center of the pinch.</param>
+            <param name="y">The y coordinate of the center of the pinch.</param>
+            <param name="duration">The TimeSpan duration of the pinch gesture.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PinchToZoomOut(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Performs a pinch gestures on the matched element to zoom the view out. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Element to zoom in.</param>
+            <param name="duration">The TimeSpan duration of the pinch gesture.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PinchToZoomOutCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.Nullable{System.TimeSpan})">
+            <summary>
+            Performs a pinch gestures to zoom the view out on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate of the center of the pinch.</param>
+            <param name="y">The y coordinate of the center of the pinch.</param>
+            <param name="duration">The TimeSpan duration of the pinch gesture.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollUntilVisible(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.Double,System.Int32)">
+            <summary>
+            Scrolls within a specified element until a target element is visible or a timeout occurs.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toElementId">Specify what element to scroll within.</param>
+            <param name="down">Whether scrolls should be down or up.</param>
+            <param name="elementToFind">The ID of the element to find.</param>
+            <param name="scrollingElement">The ID of the element to scroll within.</param>
+            <param name="down">Indicates whether to scroll down (true) or up (false).</param>
+            <param name="horizontalStartPoint">Optional horizontal start point for the scroll.</param>
+            <param name="percentToScroll">The percentage of the element to scroll with each gesture.</param>
+            <param name="timeoutInSeconds">The maximum time to wait for the element to become visible.</param>
+            <exception cref="T:OpenQA.Selenium.NotFoundException">Thrown if the element is not visible within the timeout period.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollUntilVisibleText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Boolean,System.Nullable{System.Int32},System.Double,System.Int32)">
+            <summary>
+            Scrolls within a specified element until a target element is visible or a timeout occurs.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toElementId">Specify what element to scroll within.</param>
+            <param name="down">Whether scrolls should be down or up.</param>
+            <param name="elementToFind">The text of the element to find.</param>
+            <param name="scrollingElement">The ID of the element to scroll within.</param>
+            <param name="down">Indicates whether to scroll down (true) or up (false).</param>
+            <param name="horizontalStartPoint">Optional horizontal start point for the scroll.</param>
+            <param name="percentToScroll">The percentage of the element to scroll with each gesture.</param>
+            <param name="timeoutInSeconds">The maximum time to wait for the element to become visible.</param>
+            <exception cref="T:OpenQA.Selenium.NotFoundException">Thrown if the element is not visible within the timeout period.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Scroll(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean,System.Double,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls within a specified element by a given percentage.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="scrollingElement">The ID of the element to scroll within.</param>
+            <param name="down">Indicates whether to scroll down (true) or up (false).</param>
+            <param name="percentToScroll">The percentage of the element to scroll with each gesture.</param>
+            <param name="horizontalStartPoint">Optional horizontal start point for the scroll.</param>
+            <exception cref="T:OpenQA.Selenium.NotFoundException">Thrown if the driver is null.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean,System.Double,System.Nullable{System.Int32})">
+            <summary>
+            Scrolls within a specified element by a given percentage.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="scrollingElement">The text of the element to scroll within.</param>
+            <param name="down">Indicates whether to scroll down (true) or up (false).</param>
+            <param name="percentToScroll">The percentage of the element to scroll with each gesture.</param>
+            <param name="horizontalStartPoint">Optional horizontal start point for the scroll.</param>
+            <exception cref="T:OpenQA.Selenium.NotFoundException">Thrown if the driver is null.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAlert(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Return the currently presented alert or action sheet.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAlerts(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Return the currently presented alerts or action sheets.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DismissAlert(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Dismisses the alert.
+            </summary>
+            <param name="alertElement">The element that represents the alert or action sheet.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAlertButtons(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Return the buttons in the alert or action sheet.
+            </summary>
+            <param name="alertElement">The element that represents the alert or action sheet.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAlertText(Syncfusion.UITestHelpers.Core.IUIElement)">
+            <summary>
+            Return the text messages in the alert or action sheet.
+            </summary>
+            <param name="alertElement">The element that represents the alert or action sheet.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForElement(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is found. 
+            Throws a TimeoutException if no element is found within the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Target Element.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+            <param name="postTimeout">The final TimeSpan to wait after the element has been found.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForAnyElement(Syncfusion.UITestHelpers.Core.IApp,System.String[],System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until any matching element is found. 
+            Throws a TimeoutException if no element is found within the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Collection of target Elements.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+            <param name="postTimeout">The final TimeSpan to wait after the element has been found.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForElement(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is found. 
+            Throws a TimeoutException if no element is found within the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+            <param name="postTimeout">The final TimeSpan to wait after the element has been found.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForElement(Syncfusion.UITestHelpers.Core.IApp,System.Func{Syncfusion.UITestHelpers.Core.IUIElement},System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is found. 
+            Throws a TimeoutException if no element is found within the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Entry point for the fluent API to specify the element.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForNoElement(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is no longer found. 
+            Throws a TimeoutException if the element is visible at the end of the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Target Element.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+            <param name="postTimeout">The final TimeSpan to wait after the element has been found.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForNoElement(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is no longer found. 
+            Throws a TimeoutException if the element is visible at the end of the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+            <param name="postTimeout">The final TimeSpan to wait after the element has been found.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForNoElement(Syncfusion.UITestHelpers.Core.IApp,System.Func{Syncfusion.UITestHelpers.Core.IUIElement},System.String,System.Nullable{System.TimeSpan},System.Nullable{System.TimeSpan})">
+            <summary>
+            Wait function that will repeatedly query the app until a matching element is no longer found. 
+            Throws a TimeoutException if the element is visible at the end of the time limit.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Entry point for the fluent API to specify the element.</param>
+            <param name="timeoutMessage">The message used in the TimeoutException.</param>
+            <param name="timeout">The TimeSpan to wait before failing.</param>
+            <param name="retryFrequency">The TimeSpan to wait between each query call to the app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.QueryUntilPresent``1(Syncfusion.UITestHelpers.Core.IApp,System.Func{``0},System.Int32,System.Int32)">
+            <summary>
+            Repeatedly executes a query until it returns a non-empty value or the specified retry count is reached.
+            </summary>
+            <typeparam name="T">The type of the element.</typeparam>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="func">The query to execute.</param>
+            <param name="retryCount">The number of times to retry execution. Default is 10.</param>
+            <param name="delayInMs">The delay in milliseconds between retries. Default is 2000ms.</param>
+            <returns>An value of type T.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.QueryUntilNotPresent``1(Syncfusion.UITestHelpers.Core.IApp,System.Func{``0},System.Int32,System.Int32)">
+            <summary>
+            Repeatedly executes a query until it returns a null value or the specified retry count is reached.
+            </summary>
+            <typeparam name="T">The type of the element.</typeparam>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="func">The query to execute.</param>
+            <param name="retryCount">The number of times to retry execution. Default is 10.</param>
+            <param name="delayInMs">The delay in milliseconds between retries. Default is 2000ms.</param>
+            <returns>An value of type T.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressVolumeUp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Presses the volume up button on the device.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressVolumeDown(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Presses the volume down button on the device.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressEnter(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Presses the enter key in the app.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressEnterWindows(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Windows-only: reliably simulates pressing the Enter key.
+            Tries focused element (HasKeyboardFocus), then ActiveElement, then global Actions fallback.
+            If not on Windows, falls back to the generic <see cref="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PressEnter(Syncfusion.UITestHelpers.Core.IApp)"/>.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TriggerCompletedWindows(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32)">
+            <summary>
+            Windows-only: focuses the specified entry by AutomationId and triggers Completed by sending Enter.
+            Use this after setting a value programmatically (e.g., via a page button) to simulate user commit.
+            </summary>
+            <param name="app">Main app interface.</param>
+            <param name="entryAutomationId">AutomationId of the target entry (e.g., "Masked" or "Numeric").</param>
+            <param name="focusWaitMs">Delay after focusing before sending Enter.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetProgrammaticValueAndCompleteWindows(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,System.Int32)">
+            <summary>
+            Windows-only: taps a page button that sets a control's value programmatically, then
+            focuses the target entry and sends Enter to trigger its Completed event.
+            </summary>
+            <param name="app">Main app interface.</param>
+            <param name="programButtonId">AutomationId of the button that sets the value programmatically.</param>
+            <param name="entryAutomationId">AutomationId of the entry to trigger Completed on.</param>
+            <param name="focusWaitMs">Delay after focusing before sending Enter.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeLeftToRight(Syncfusion.UITestHelpers.Core.IApp,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a left to right swipe gesture on the screen. 
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeLeftToRight(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a left to right swipe gesture on the matching element. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeLeftToRight(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a left to right swipe gesture on an element matched by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeRightToLeft(Syncfusion.UITestHelpers.Core.IApp,System.Double,System.Int32,System.Boolean)">
+            <summary>
+             Performs a right to left swipe gesture on the screen. 
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeRightToLeft(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a right to left swipe gesture on the matching element. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeRightToLeft(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a right to left swipe gesture on an element matched by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeTopToBottom(Syncfusion.UITestHelpers.Core.IApp,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a top to bottom swipe gesture on the screen. 
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeTopToBottom(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a top to bottom swipe gesture on the matching element. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeTopToBottom(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a top to bottom swipe gesture on an element matched by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeBottomToTop(Syncfusion.UITestHelpers.Core.IApp,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a bottom to top swipe gesture on the screen. 
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeBottomToTop(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a bottom to top swipe gesture on the matching element. 
+            If multiple elements are matched, the first one will be used.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SwipeBottomToTop(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Performs a bottom to top swipe gesture on an element matched by 'query'.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollLeft(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls left on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollLeft(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls left on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollDown(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls down on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollDown(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls down on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollDownTo(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scroll down until an element that matches the toMarked is shown on the screen.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toMarked">Marked selector to select what element to bring on screen.</param>
+            <param name="withinMarked">Marked selector to select what element to scroll within.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollDownTo(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scroll down until an element that matches the query is shown on the screen.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toMarked">Marked selector to select what element to bring on screen.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollRight(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls right on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollRight(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls right on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollUp(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scrolls up on the first element matching query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector to match.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollUpTo(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scroll up until an element that matches the <paramref name="toMarked"/> is shown on the screen in <paramref name="withinMarked"/>.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toMarked">Marked selector to select what element to bring on screen.</param>
+            <param name="withinMarked">Marked selector to select what element to scroll within.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ScrollUpTo(Syncfusion.UITestHelpers.Core.IApp,System.String,Syncfusion.UITestHelpers.Core.IQuery,Syncfusion.UITestHelpers.Appium.ScrollStrategy,System.Double,System.Int32,System.Boolean)">
+            <summary>
+            Scroll up until an element that matches <paramref name="toMarked"/> is shown on the screen.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="toMarked">Marked selector to select what element to bring on screen.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="strategy">Strategy for scrolling element.</param>
+            <param name="swipePercentage">How far across the element to swipe (from 0.0 to 1.0).</param>
+            <param name="swipeSpeed">The speed of the gesture.</param>
+            <param name="withInertia">Whether swipes should cause inertia.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetOrientationLandscape(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Changes the device orientation to landscape mode.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetOrientationPortrait(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Changes the device orientation to portrait mode.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetOrientation(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Get the current device orientation.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <returns>The current device orientation</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetClipboardText(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Get the text of the system clipboard.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <returns>Clipboard content as string or an empty string if the clipboard is empty.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetClipboardText(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Set the content of the system clipboard.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="content">The actual clipboard content.</param>
+            <param name="label">Clipboard data label for Android.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ClickCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs a mouse click on the given coordinates.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to click.</param>
+            <param name="y">The y coordinate to click.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.RightClickMouse(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs a native right-click with the mouse at the given screen coordinates.
+            Supported on desktop platforms (Windows, Mac Catalyst).
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to right-click.</param>
+            <param name="y">The y coordinate to right-click.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.RightClickMouse(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Performs a native right-click with the mouse at the center of the specified element.
+            Supported on desktop platforms (Windows, Mac Catalyst).
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="element">Target element identifier.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single)">
+            <summary>
+            Performs a tap / touch gesture on the given coordinates.
+            This API currently doesn't work on Catalyst https://github.com/dotnet/maui/issues/19754
+            For Catalyst you'll currently need to use Click instead. 
+            Tap is more mobile-specific and provides more flexibility than click. Click is more general and is 
+            used for simpler interactions. Depending on the context of your test, you might prefer one over the other.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="x">The x coordinate to tap.</param>
+            <param name="y">The y coordinate to tap.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.LaunchApp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Executes an existing application on the device. 
+            If the application is already running then it will be brought to the foreground.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.BackgroundApp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Send the currently running app for this session to the background.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ForegroundApp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            If the application is already running then it will be brought to the foreground.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ResetApp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Reset the currently running app for this session.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.CloseApp(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Close an app on device.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetSliderValue(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double)">
+            <summary>
+            Sets the value of a Slider element that matches marked.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector of the Slider element to update.</param>
+            <param name="value">The value to set the Slider to.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetSliderValue(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Double,System.Double,System.Double)">
+            <summary>
+            Sets the value of a Slider element that matches marked.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector of the Slider element to update.</param>
+            <param name="value">The value to set the Slider to.</param>
+            <param name="minimum">Te minimum selectable value for the Slider.</param>
+            <param name="maximum">Te maximum selectable value for the Slider.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetSliderValue(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Double,System.Double,System.Double)">
+            <summary>
+            Sets the value of a slider element that matches query.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="query">Represents the query that identify an element by parameters such as type, text it contains or identifier.</param>
+            <param name="value">The value to set the Slider to.</param>
+            <param name="minimum">Te minimum selectable value for the Slider.</param>
+            <param name="maximum">Te maximum selectable value for the Slider.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IncreaseStepper(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Increases the value of a Stepper control.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector of the Stepper element to increase.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DecreaseStepper(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Decreases the value of a Stepper control.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="marked">Marked selector of the Stepper element to decrease.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DragCoordinates(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Performs a continuous drag gesture between 2 points.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="fromX">The x coordinate to start dragging from.</param>
+            <param name="fromY">The y coordinate to start dragging from.</param>
+            <param name="toX">The x coordinate to drag to.</param>
+            <param name="toY">The y coordinate to drag to.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.DragCoordinatesKanbanwait(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>
+            Performs a continuous drag gesture between 2 points with configurable hold and drag duration.
+            The gesture will press at the start position, hold for the specified duration, then drag to the destination over the drag duration.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="fromX">The x coordinate to start dragging from.</param>
+            <param name="fromY">The y coordinate to start dragging from.</param>
+            <param name="toX">The x coordinate to drag to.</param>
+            <param name="toY">The y coordinate to drag to.</param>
+            <param name="holdDurationMs">Duration in milliseconds to hold at the start position before starting the drag (default 500ms).</param>
+            <param name="dragDurationMs">Duration in milliseconds for the drag movement from start to destination (default 1000ms).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Pan(Syncfusion.UITestHelpers.Core.IApp,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Performs a pan gesture between 2 points.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="fromX">The x coordinate to start panning from.</param>
+            <param name="fromY">The y coordinate to start panning from.</param>
+            <param name="toX">The x coordinate to pan to.</param>
+            <param name="toY">The y coordinate to pan to.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Back(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Navigate back on the device.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Refresh(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Refresh the current page.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetAppId(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Return the AppId of the running app. This is used inside any appium command that want the app id
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetTestDevice(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Retrieve the target device this test is running against
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetLightTheme(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Sets light device's theme
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.SetDarkTheme(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Sets dark device's theme
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsFocused(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Check if element has focused
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="id">Target element</param>
+            <returns>Returns <see langword="true"/> if focused</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Lock(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Lock the screen.
+            Functionality that's only available on Android and iOS.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <exception cref="T:System.InvalidOperationException">Lock is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Unlock(Syncfusion.UITestHelpers.Core.IApp,System.String,System.String)">
+            <summary>
+            Unlock the screen.
+            Functionality that's only available on Android and iOS.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="unlockType">This capability supports the following possible values: pin, pinWithKeyEvent, password, pattern.</param>
+            <param name="unlockKey">a valid pin (digits in range 0-9), password (latin characters) or pattern (treat the pattern pins similarly to numbers on a digital phone dial).</param>
+            <exception cref="T:System.InvalidOperationException">Unlock is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.IsLocked(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Check whether the device is locked or not.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.Shake(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Perform a shake action on the device.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.StartRecordingScreen(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Start recording screen.
+            Functionality that's only available on Android, iOS and Windows.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <exception cref="T:System.InvalidOperationException">StartRecordingScreen is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.StopRecordingScreen(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Stop recording screen.
+            Functionality that's only available on Android, iOS and Windows.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <exception cref="T:System.InvalidOperationException">StopRecordingScreen is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ToggleAirplaneMode(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Toggle airplane mode on device.
+            Functionality that's only available on Android.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <exception cref="T:System.InvalidOperationException">ToggleAirplaneMode is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ToggleWifi(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Switch the state of the wifi service.
+            Functionality that's only available on Android. 
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <exception cref="T:System.InvalidOperationException">ToggleWifi is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ToggleSystemAnimations(Syncfusion.UITestHelpers.Core.IApp,System.Boolean)">
+            <summary>
+            Switch the System animations state.
+            Optimize and accelerate tests, eliminating animations entirely when Appium is executing tests, as they serve no practical purpose in this context.
+            Functionality that's only available on Android and Catalyst.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="enableSystemAnimations">Enable/disable the system animations.</param>
+            <exception cref="T:System.InvalidOperationException">ToggleSystemAnimations is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/> and <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumCatalystApp"/>.</exception>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ToggleData(Syncfusion.UITestHelpers.Core.IApp)" -->
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetPerformanceData(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Gets the information of the system state which is supported to read as like cpu, memory, network traffic, and battery.
+            Functionality that's only available on Android.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="performanceDataType">The available performance data types(cpuinfo | batteryinfo | networkinfo | memoryinfo).</param>
+            <exception cref="T:System.InvalidOperationException">ToggleWifi is only supported on <see cref="T:Syncfusion.UITestHelpers.Appium.AppiumAndroidApp"/>.</exception>
+            <returns>The information of the system related to the performance.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.EnterFullScreen(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Maximize the active App window.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ExitFullScreen(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Leave the App full screen mode.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.PrintTree(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Print in the Output the current application hierarchy XML (app).
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetSystemBars(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Retrieve visibility and bounds information of the status and navigation bars
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <returns>Information about visibility and bounds of status and navigation bar.</returns>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapBackArrow(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Navigates back in the application by simulating a tap on the platform-specific back navigation button or using a custom identifier.
+            </summary>
+            <param name="app">The IApp instance representing the main gateway to interact with the application.</param>
+            <param name="customBackButtonIdentifier">Optional custom identifier string for the back button. If not provided, the default back arrow query will be used.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapBackArrow(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery)">
+            <summary>
+            Navigates back in the application using a custom IQuery.
+            </summary>
+            <param name="app">The IApp instance representing the main gateway to interact with the application.</param>
+            <param name="query">The custom IQuery for the back button.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapDisplayAlertButton(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Int32)">
+            <summary>
+            Taps a button in a display alert dialog.
+            For AppiumCatalystApp, it uses specific element identifiers to locate and tap the alert button.
+            For other app types, it locates and taps the button using the provided text.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="text">The text of the button to tap in the display alert (used for non-AppiumCatalystApp instances).</param>
+            <param name="buttonIndex">
+            The index of the button in the alert dialog, used to generate the correct element identifier.
+            For example, in a alert with two buttons:
+            - 0 (default) corresponds to the leftmost button (e.g., "OK" with identifier ending in 999)
+            - 1 corresponds to the button to its right (e.g., "Cancel" with identifier ending in 998)
+            </param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetDefaultBackArrowQuery(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Gets the default query for the back arrow button based on the app type.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <returns>An IQuery for the default back arrow button.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an unsupported app type is provided.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.GetCustomBackArrowQuery(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Gets a custom query for the back arrow button based on the app type and a custom identifier.
+            Note that for Windows apps, the back button is not customizable, so the default identifier is used.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="customBackButtonIdentifier">The custom identifier for the back button.</param>
+            <returns>An IQuery for the custom back arrow button.</returns>
+            <exception cref="T:System.ArgumentException">Thrown when an unsupported app type is provided.</exception>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForElementTillPageNavigationSettled(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Nullable{System.TimeSpan})">
+            <summary>
+            Waits for an element to be ready until page navigation has settled, with additional waiting for MacCatalyst.
+            This method helps prevent null reference exceptions during page transitions, especially in MacCatalyst.
+            </summary>
+            <param name="app">The IApp instance.</param>
+            <param name="elementId">The id of the element to wait for.</param>
+            <param name="timeout">Optional timeout for the wait operation. Default is null, which uses the default timeout.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForElementTillPageNavigationSettled(Syncfusion.UITestHelpers.Core.IApp,Syncfusion.UITestHelpers.Core.IQuery,System.Nullable{System.TimeSpan})">
+            <summary>
+            Waits for an element to be ready until page navigation has settled, with additional waiting for MacCatalyst.
+            This method helps prevent null reference exceptions during page transitions, especially in MacCatalyst.
+            </summary>
+            <param name="app">The IApp instance.</param>
+            <param name="query">The query to use for finding the element.</param>
+            <param name="timeout">Optional timeout for the wait operation. Default is null, which uses the default timeout.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForFlyoutIcon(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean)">
+            <summary>
+            Waits for the flyout icon to appear in the app.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="automationId">The automation ID of the flyout icon (default is an empty string).</param>
+            <param name="isShell">Indicates whether the app is using Shell navigation (default is true).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.ShowFlyout(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Shows the flyout menu in the app.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="automationId">The automation ID of the flyout icon (default is an empty string).</param>
+            <param name="usingSwipe">Indicates whether to use swipe gesture to open the flyout (default is false).</param>
+            <param name="waitForFlyoutIcon">Indicates whether to wait for the flyout icon before showing the flyout (default is true).</param>
+            <param name="isShell">Indicates whether the app is using Shell navigation (default is true).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapFlyoutIcon(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Taps the Flyout icon for Shell or FlyoutPage.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="title">Optional title for FlyoutPage (default is empty string).</param>
+            <param name="isShell">Indicates whether the Flyout is for Shell (true) or FlyoutPage (false).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapShellFlyoutIcon(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Taps the Flyout icon for Shell pages.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapFlyoutPageIcon(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Taps the Flyout icon for FlyoutPage.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+            <param name="title">Optional title for FlyoutPage (default is empty string).</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapInFlyout(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean)">
+            <summary>
+            Taps an item in the specified flyout menu.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="flyoutItem">The text or accessibility identifier of the flyout item to tap.</param>
+            <param name="isShellFlyout">True if it's a Shell flyout, false for FlyoutPage flyout.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapInShellFlyout(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Taps an item in the Shell flyout menu.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="flyoutItem">The text or accessibility identifier of the flyout item to tap.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapInFlyoutPageFlyout(Syncfusion.UITestHelpers.Core.IApp,System.String)">
+            <summary>
+            Taps an item in the FlyoutPage flyout menu.
+            </summary>
+            <param name="app">The IApp instance representing the application.</param>
+            <param name="flyoutItem">The text or accessibility identifier of the flyout item to tap.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapMoreButton(Syncfusion.UITestHelpers.Core.IApp)">
+            <summary>
+            Taps the "More" button in the app, with platform-specific logic for Android and Windows.
+            This method does not currently support iOS and macOS platforms, where the "More" button is not shown.
+            </summary>
+            <param name="app">Represents the main gateway to interact with an app.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Syncfusion.UITestHelpers.Appium.HelperExtensions.TapTab(Syncfusion.UITestHelpers.Core.IApp,System.String,System.Boolean)" -->
+        <!-- Badly formed XML comment ignored for member "M:Syncfusion.UITestHelpers.Appium.HelperExtensions.WaitForTabElement(Syncfusion.UITestHelpers.Core.IApp,System.String)" -->
+    </members>
+</doc>

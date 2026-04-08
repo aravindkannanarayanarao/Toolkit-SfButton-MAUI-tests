@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Syncfusion.UITestHelpers.ExtendReport</name>
+    </assembly>
+    <members>
+        <member name="T:Syncfusion.UITestHelpers.ExtendReport.UITestData">
+            <summary>
+            Abstract base class for UI test data with extended reporting capabilities.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestData.#ctor(Syncfusion.UITestHelpers.Core.TestDevice)">
+            <summary>
+            Abstract base class for UI test data with extended reporting capabilities.
+            </summary>
+        </member>
+        <member name="T:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable">
+            <summary>
+            Generates and maintains an Excel validation table that tracks all failed test cases.
+            Each failed test case is appended as a new row — existing data is never replaced.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.DefaultFileName">
+            <summary>
+            Default file name for the failed-cases Excel report.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.SheetName">
+            <summary>
+            Sheet name used inside the workbook.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.Headers">
+            <summary>
+            Column headers for the validation table.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.AppendFailedTestCase(System.String,System.Double,System.DateTime,System.String,System.String)">
+            <summary>
+            Appends a single failed test case entry to the Excel validation table.
+            If the file does not exist, it creates a new workbook with headers.
+            If the file already exists, it opens and appends a new row without replacing existing data.
+            </summary>
+            <param name="testName">Name of the failed test case.</param>
+            <param name="runTimeSeconds">Execution duration of the test in seconds.</param>
+            <param name="runDate">Date and time when the test was executed.</param>
+            <param name="exceptionDetails">Exception message and stack trace captured from the failed test.</param>
+            <param name="filePath">
+            Optional full path for the Excel file. 
+            If null, the file is placed in the report directory (<see cref="F:Syncfusion.UITestHelpers.NUnit.DataBridge.report"/>).
+            </param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.AppendAllFailedTestCases(System.String)">
+            <summary>
+            Appends all currently tracked failed test cases from <see cref="T:Syncfusion.UITestHelpers.NUnit.DataBridge"/> to the Excel file.
+            Only test cases with status "Failed" or "Error" are included.
+            </summary>
+            <param name="filePath">Optional full path for the Excel file.</param>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.ResolveFilePath(System.String)">
+            <summary>
+            Resolves the full file path for the Excel report.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.EnsureDirectoryExists(System.String)">
+            <summary>
+            Ensures the directory for the given file path exists.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.LoadOrCreateWorkbook(System.String)">
+            <summary>
+            Opens an existing workbook or creates a new one.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.GetOrCreateWorksheet(ClosedXML.Excel.XLWorkbook)">
+            <summary>
+            Gets the existing worksheet or creates a new one with headers.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.WriteHeaders(ClosedXML.Excel.IXLWorksheet)">
+            <summary>
+            Writes the header row with styling.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.FindNextEmptyRow(ClosedXML.Excel.IXLWorksheet)">
+            <summary>
+            Finds the next empty row in the worksheet (after existing data).
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.StyleDataRow(ClosedXML.Excel.IXLWorksheet,System.Int32)">
+            <summary>
+            Applies styling to a data row.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.EnforceMaxColumnWidths(ClosedXML.Excel.IXLWorksheet)">
+            <summary>
+            Enforces maximum column widths to prevent the sheet from stretching too wide.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.FormatDuration(System.Double)">
+            <summary>
+            Formats a duration in seconds to a human-readable string.
+            </summary>
+        </member>
+        <member name="M:Syncfusion.UITestHelpers.ExtendReport.UITestValidationTable.TruncateException(System.String,System.Int32)">
+            <summary>
+            Truncates exception details to a maximum length to keep the Excel cell manageable.
+            </summary>
+        </member>
+    </members>
+</doc>
