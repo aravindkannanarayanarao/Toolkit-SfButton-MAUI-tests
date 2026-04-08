@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.MAUI_32579.ItemsPage"
+             Title="ItemsPage">
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,10">
+            </StackLayout>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <expander:SfExpander x:Name="Expander1" IsExpanded="False" Grid.Row="0" Grid.Column="0" Margin="0,0,0,10">
+                    <expander:SfExpander.Header>
+                        <Grid>
+                        <Label AutomationId="Header One" Text="Header One"/>
+                        </Grid>
+                    </expander:SfExpander.Header>
+                    <expander:SfExpander.Content>
+                        <Grid>
+                            <Label Text="Content One" />
+                        </Grid>
+                    </expander:SfExpander.Content>
+                </expander:SfExpander>
+
+                <expander:SfExpander x:Name="Expander2" IsExpanded="False" Grid.Row="1" Grid.Column="0" Margin="0,0,0,10">
+                    <expander:SfExpander.Header>
+                        <Grid>
+                        <Label AutomationId="Header Two" Text="Header Two"/>
+                        </Grid>
+                    </expander:SfExpander.Header>
+                    <expander:SfExpander.Content>
+                        <Grid>
+                            <Label Text="Content Two" />
+                        </Grid>
+                    </expander:SfExpander.Content>
+                </expander:SfExpander>
+
+                <expander:SfExpander x:Name="Expander3" IsExpanded="False" Grid.Row="2" Grid.Column="0" Margin="0,0,0,10">
+                    <expander:SfExpander.Header>
+                        <Grid>
+                            <Label Text="Header Three"/>
+                        </Grid>
+                    </expander:SfExpander.Header>
+                    <expander:SfExpander.Content>
+                        <Grid>
+                            <Label Text="Content Three" />
+                        </Grid>
+                    </expander:SfExpander.Content>
+                </expander:SfExpander>
+            </Grid>
+        </Grid>
+    <!--</RelativeLayout>-->
+</ContentPage>

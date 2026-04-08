@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample1.BindableAccordIonGrid"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             xmlns:local="clr-namespace:AccordionSample1"
+             Title="BindableAccordIonGrid">
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button AutomationId="addItem" Text="Add" Clicked="addItem_Clicked"/>
+            <syncfusion:SfAccordion x:Name="Accordion" BindableLayout.ItemsSource="{Binding Info}" Grid.Row="1">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <syncfusion:AccordionItem>
+                            <syncfusion:AccordionItem.Header>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                            </syncfusion:AccordionItem.Header>
+                            <syncfusion:AccordionItem.Content>
+                                <Label Text="{Binding Description}"/>
+                            </syncfusion:AccordionItem.Content>
+                        </syncfusion:AccordionItem>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </syncfusion:SfAccordion>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

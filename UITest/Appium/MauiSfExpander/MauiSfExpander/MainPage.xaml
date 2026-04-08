@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSfExpander.MainPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:syncfusion2="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup">
+
+
+    <StackLayout  >
+
+            <HorizontalStackLayout>
+                    <Button WidthRequest="50" Text="HeaderNullConstructor" Clicked="Button_Clicked_21"/>
+                    <Button WidthRequest="50" Text="ContentNullConstructor" Clicked="Button_Clicked_22"/>
+                    <Button WidthRequest="50" Text="ChangeHeader" Clicked="Button_Clicked_6"/>
+                    <Button WidthRequest="50" Text="HeaderSetOnRuntime" Clicked="Button_Clicked_8"/>
+                    <Button WidthRequest="50" Text="ContentSetOnRuntime" Clicked="Button_Clicked_9"/>
+                    <Button WidthRequest="50" Text="HeaderBackgroundColor" Clicked="Button_Clicked_5"/>
+                    <Button WidthRequest="50" Text="IconPositionStart" Clicked="Button_Clicked"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button WidthRequest="50" Text="IconPositionEnd" Clicked="Button_Clicked_1"/>
+                    <Button WidthRequest="50" Text="IconPositionNone" Clicked="Button_Clicked_2"/>
+                    <Button WidthRequest="50" Text="IconColor" Clicked="Button_Clicked_4"/>
+                    <Button WidthRequest="50" Text="ExpandCollapse" Clicked="Button_Clicked_7"/>
+                    <Button WidthRequest="50" Text="HeaderNull" Clicked="Button_Clicked_3"/>
+                    <Button WidthRequest="50" Text="ContentNull" Clicked="Button_Clicked_13"/>
+                    <Button WidthRequest="50" Text="FullContentChangeAndExpanded" Clicked="Button_Clicked_10"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button WidthRequest="50" Text="FullContentChangeAndCollapsed" Clicked="Button_Clicked_11"/>
+                    <Button WidthRequest="50" Text="ChangeContentText" Clicked="Button_Clicked_12"/>
+                    <Button WidthRequest="50" Text="NullContentExpanded" Clicked="Button_Clicked_14"/>
+                    <Button WidthRequest="50" Text="NullContentCollapsed" Clicked="Button_Clicked_15"/>
+                    <Button WidthRequest="50" Text="AddSfListViewAsContent" Clicked="Button_Clicked_16"/>
+                    <Button WidthRequest="50" Text="AddSfPopupAsContent" Clicked="Button_Clicked_17"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button WidthRequest="50" Text="AddImageAsContent" Clicked="Button_Clicked_18"/>
+                    <Button WidthRequest="50" Text="Animation" Clicked="Button_Clicked_19"/>
+                    <Button WidthRequest="50" Text="FlowDirectionPage" Clicked="Button_Clicked_20"/>
+                    <Button WidthRequest="50" Text="ContentSetLoadingCS" Clicked="Button_Clicked_23"/>
+                    <Button WidthRequest="50" Text="AddContentExpanded" Clicked="Button_Clicked_24"/>
+                    <Button WidthRequest="50" Text="AddContentCollapse" Clicked="Button_Clicked_25"/>
+                </HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Button WidthRequest="50" Text="AddListViewAsContentOnLoading" Clicked="Button_Clicked_26"/>
+               
+                    <Button WidthRequest="50" Text="ChangeToRTL" Clicked="Button_Clicked_27"/>
+                    <Button WidthRequest="50" Text="AddImageAsContentOnLoading" Clicked="Button_Clicked_28"/>
+                    <Button WidthRequest="50" Text="AddPopupAsContentOnLoading" Clicked="Button_Clicked_29"/>
+                    <Button WidthRequest="50"  Text="SetFlowDirectionParent" Clicked="Button_Clicked_30"/>
+               
+
+            </HorizontalStackLayout>
+        
+        <Border StrokeShape="RoundRectangle 8,8,8,8" Margin="{OnPlatform Default='8,0,8,8',WinUI='8,0,6,8',MacCatalyst='8,0,6,8'}" Stroke="#CAC4D0"  StrokeThickness="{OnPlatform MacCatalyst=2,Default=1}" WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Android=160}">
+            <syncfusion:SfExpander x:Name="expander" AnimationDuration="200" IsExpanded="True"  HeaderIconPosition="Start">
+                <syncfusion:SfExpander.Header>
+                  
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="dotnet_bot.png" HeightRequest="30" WidthRequest="50"/>
+                        <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Header" FontSize="14" Grid.Column="1" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                   
+                </syncfusion:SfExpander.Header>
+                <syncfusion:SfExpander.Content >
+                    <Grid Padding="18,8,0,18"  >
+                      
+
+                        <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Content" FontSize="14" VerticalOptions="CenterAndExpand"/>
+                   
+                    </Grid>
+                    
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+        </Border>
+        
+      
+    </StackLayout>
+
+
+
+
+
+</ContentPage>

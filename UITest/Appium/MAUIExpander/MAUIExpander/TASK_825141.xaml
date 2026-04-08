@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIExpander.TASK_825141"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             Title="TASK_825141">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="HookEvents" Clicked="HookEvents_Clicked"/>
+            <Button Text="AccItem1IsExpandedTrue" Clicked="AccItem1IsExpandedTrue_Clicked"/>
+            <Button Text="AccItem1IsExpandedFalse" Clicked="AccItem1IsExpandedFalse_Clicked"/>
+            <Button Text="AccItem2IsExpandedTrue" Clicked="AccItem2IsExpandedTrue_Clicked"/>
+            <Button Text="AccItem2IsExpandedFalse" Clicked="AccItem2IsExpandedFalse_Clicked"/>
+
+
+            <syncfusion:SfAccordion x:Name="accordion"  ExpandMode="Single"
+                             Collapsed="Accordion_Collapsed"
+                                Expanded="Accordion_Expanded"
+                                Collapsing="Accordion_Collapsing"
+                                Expanding="Accordion_Expanding"       
+                                >
+                <!--Collapsed="Accordion_Collapsed"
+                                Expanded="Accordion_Expanded"
+                                Collapsing="Accordion_Collapsing"
+                                Expanding="Accordion_Expanding"-->
+            <syncfusion:SfAccordion.Items>
+                    <syncfusion:AccordionItem x:Name="AccordionItem1" IsExpanded="True">
+                    <syncfusion:AccordionItem.Header>
+                        <Grid>
+                            <Label TextColor="#495F6E" Text="Item1" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030" Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger." 
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem x:Name="AccordionItem2"  IsExpanded="True">
+                    <syncfusion:AccordionItem.Header>
+                        <Grid>
+                            <Label TextColor="#495F6E" Text="Item2" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030" Text="Hamburger accompanied Prepared wrbecue sauce is spread on top and grilled until" 
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem x:Name="AccordionItem3" IsExpanded="False">
+                        <syncfusion:AccordionItem.Header>
+                            <Label x:Name="headerlabel3" BackgroundColor="Orange" TextColor="#495F6E" Text="Item3" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                                <Label x:Name="contentlabel3" TextColor="#303030" Text="Prepared wrbecue sauce is spread on top and grilled until the sauce" 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem x:Name="AccordionItem4">
+                    <syncfusion:AccordionItem.Header>
+                        <Grid>
+                            <Label TextColor="#495F6E" Text="Item4" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030" Text="Consists oftself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+               
+            </syncfusion:SfAccordion.Items>
+        </syncfusion:SfAccordion>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

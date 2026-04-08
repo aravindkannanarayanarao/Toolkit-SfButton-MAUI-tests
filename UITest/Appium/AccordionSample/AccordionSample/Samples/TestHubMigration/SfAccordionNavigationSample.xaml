@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample.SfAccordionNavigationSample"
+             Title="SfAccordion - Navigation">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="SfAccordion Navigation Tests"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#000000" />
+
+            <!-- NavigationPushAsync Options -->
+            <StackLayout Padding="10" BackgroundColor="#E8F4F8" Spacing="10">
+                <Label Text="NavigationPushAsync" FontSize="14" FontAttributes="Bold" />
+
+                <Button AutomationId="Horizontal NavigationPushAsync" SemanticProperties.Description="Horizontal NavigationPushAsync"
+                        Text="Horizontal Layout (PushAsync)"
+                        Clicked="OnHorizontalPushAsyncClicked"
+                        Padding="10" />
+
+                <Button AutomationId="Absolute NavigationPushAsync" SemanticProperties.Description="Absolute NavigationPushAsync"
+                        Text="Absolute Layout (PushAsync)"
+                        Clicked="OnAbsolutePushAsyncClicked"
+                        Padding="10" />
+            </StackLayout>
+
+            <!-- NavigationPushModalAsync Options -->
+            <StackLayout Padding="10" BackgroundColor="#FFE8E8" Spacing="10">
+                <Label Text="NavigationPushModalAsync" FontSize="14" FontAttributes="Bold" />
+
+                <Button AutomationId="Horizontal NavigationPushModalAsync" SemanticProperties.Description="Horizontal NavigationPushModalAsync"
+                        Text="Horizontal Layout (PushModalAsync)"
+                        Clicked="OnHorizontalPushModalAsyncClicked"
+                        Padding="10" />
+
+                <Button AutomationId="Absolute NavigationPushModalAsync" SemanticProperties.Description="Absolute NavigationPushModalAsync"
+                        Text="Absolute Layout (PushModalAsync)"
+                        Clicked="OnAbsolutePushModalAsyncClicked"
+                        Padding="10" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

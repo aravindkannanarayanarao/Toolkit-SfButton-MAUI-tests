@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="MauiSfExpander.FlowDirectionPage"
+             Title="FlowDirectionPage">
+
+    <VerticalStackLayout  >
+        <ScrollView>
+            <StackLayout Orientation="Vertical"
+                      >
+                <Border StrokeShape="RoundRectangle 8,8,8,8" Margin="{OnPlatform Default='8,0,8,8',WinUI='8,0,6,8',MacCatalyst='8,0,6,8'}" Stroke="#CAC4D0"  StrokeThickness="{OnPlatform MacCatalyst=2,Default=1}" WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Android=180}">
+                    <Button Text="RTLtoLTR" Clicked="Button_Clicked"/>
+                </Border>
+                <Border StrokeShape="RoundRectangle 8,8,8,8" Margin="{OnPlatform Default='8,0,8,8',WinUI='8,0,6,8',MacCatalyst='8,0,6,8'}" Stroke="#CAC4D0"  StrokeThickness="{OnPlatform MacCatalyst=2,Default=1}" WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Android=180}">
+                    <Button Text="ExpandCollapse" Clicked="Button_Clicked_1"/>
+                </Border>
+                <Border StrokeShape="RoundRectangle 8,8,8,8" Margin="{OnPlatform Default='8,0,8,8',WinUI='8,0,6,8',MacCatalyst='8,0,6,8'}" Stroke="#CAC4D0"  StrokeThickness="{OnPlatform MacCatalyst=2,Default=1}" WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Android=180}">
+                    <Button Text="HeaderIconPositionStart" Clicked="Button_Clicked_2"/>
+                </Border>
+                <Border StrokeShape="RoundRectangle 8,8,8,8" Margin="{OnPlatform Default='8,0,8,8',WinUI='8,0,6,8',MacCatalyst='8,0,6,8'}" Stroke="#CAC4D0"  StrokeThickness="{OnPlatform MacCatalyst=2,Default=1}" WidthRequest="{OnPlatform MacCatalyst=460,WinUI=340,Android=180}">
+                    <Button Text="HeaderIconPositionEnd" Clicked="Button_Clicked_3"/>
+                </Border>
+
+            </StackLayout>
+        </ScrollView>
+
+       
+
+        <syncfusion:SfExpander x:Name="expander" AnimationDuration="200" IsExpanded="True"  HeaderIconPosition="Start" FlowDirection="RightToLeft">
+                
+                
+                <syncfusion:SfExpander.Header>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="dotnet_bot.png" HeightRequest="30" WidthRequest="50"/>
+                        <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Header" FontSize="14" Grid.Column="1" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </syncfusion:SfExpander.Header>
+                
+                    
+                    
+                    
+                <syncfusion:SfExpander.Content >
+                <Grid Padding="18,8,0,18" >
+                    <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Content" FontSize="14" VerticalOptions="CenterAndExpand"/>
+                </Grid>
+            </syncfusion:SfExpander.Content>
+                    
+                    
+                    
+            </syncfusion:SfExpander>
+
+       
+         
+        </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accordion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.VSM"
+             Title="VSM">
+    <ContentPage.Resources>
+        <Color x:Key="ExpandedColor">Red</Color>
+        <Color x:Key="CollapsedColor">Green</Color>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <expander:SfExpander x:Name="expander">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="ExpandeCollapse">
+                        <VisualState Name="Expanded" >
+                            <VisualState.Setters>
+                                <Setter Property="HeaderBackground" Value="{StaticResource ExpandedColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Collapsed">
+                            <VisualState.Setters>
+                                <Setter Property="HeaderBackground" Value="{StaticResource CollapsedColor}"/>
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <expander:SfExpander.Header>
+                    <Grid>
+                        <Label Text="Header" AutomationId="Header" SemanticProperties.Description="Header"  FontAttributes="Bold"/>
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Grid>
+                        <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                    </Grid>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
+
+            <expander:SfExpander x:Name="expander1">
+                <expander:SfExpander.Header>
+                    <Grid>
+                        <Label Text="Header" AutomationId="Header1" FontAttributes="Bold"/>
+                    </Grid>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <Grid>
+                        <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                    </Grid>
+                </expander:SfExpander.Content>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="ExpandeCollapse">
+                            <VisualState Name="Expanded" >
+                                <VisualState.Setters>
+                                    <Setter Property="Header">
+                                        <Setter.Value>
+                                            <Grid>
+                                                <Label Text="Expanded Label" AutomationId="Header1" FontAttributes="Bold"/>
+                                            </Grid>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="Collapsed">
+                                <VisualState.Setters>
+                                    <Setter Property="Header">
+                                        <Setter.Value>
+                                            <Grid>
+                                                <Label Text="Collapsed Label" AutomationId="Header1" FontAttributes="Bold"/>
+                                            </Grid>
+                                        </Setter.Value>
+                                    </Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </expander:SfExpander>
+
+
+            <accordion:SfAccordion x:Name="accordion" ExpandMode="MultipleOrNone">
+                <accordion:AccordionItem>
+                    <accordion:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Cheese burger" AutomationId="Header2" FontAttributes="Bold"/>
+                        </Grid>
+                    </accordion:AccordionItem.Header>
+                    <accordion:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt."/>
+                        </Grid>
+                    </accordion:AccordionItem.Content>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="ExpandeCollapse">
+                                <VisualState Name="Expanded" >
+                                    <VisualState.Setters>
+                                        <Setter Property="HeaderBackground" Value="{StaticResource ExpandedColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState Name="Collapsed">
+                                    <VisualState.Setters>
+                                        <Setter Property="HeaderBackground" Value="{StaticResource CollapsedColor}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </accordion:AccordionItem>
+
+                <accordion:AccordionItem>
+                    <accordion:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Veggie burger" AutomationId="Header3" FontAttributes="Bold"/>
+                        </Grid>
+                    </accordion:AccordionItem.Header>
+                    <accordion:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="Veggie burger, garden burger, or tofu burger uses a meat analogue, a meat substitute such as tofu, textured vegetable protein, seitan (wheat gluten), Quorn, beans, grains or an assortment of vegetables, which are ground up and formed into patties."/>
+                        </Grid>
+                    </accordion:AccordionItem.Content>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroupList>
+                            <VisualStateGroup x:Name="ExpandeCollapse">
+                                <VisualState Name="Expanded" >
+                                    <VisualState.Setters>
+                                        <Setter Property="Header">
+                                            <Setter.Value>
+                                                <Grid>
+                                                    <Label Text="Expanded Label" AutomationId="Header3" FontAttributes="Bold"/>
+                                                </Grid>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState Name="Collapsed">
+                                    <VisualState.Setters>
+                                        <Setter Property="Header">
+                                            <Setter.Value>
+                                                <Grid>
+                                                    <Label Text="Collapsed Label" AutomationId="Header3" FontAttributes="Bold"/>
+                                                </Grid>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateGroupList>
+                    </VisualStateManager.VisualStateGroups>
+                </accordion:AccordionItem>
+            </accordion:SfAccordion>
+
+            <accordion:SfAccordion x:Name="accordion1" ExpandMode="MultipleOrNone">
+                <accordion:SfAccordion.Items>
+                    <accordion:AccordionItem>
+                        <accordion:AccordionItem.Header>
+                            <Grid>
+                                <Label Text="Cheese burger" AutomationId="Header4" FontAttributes="Bold"/>
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Grid>
+                                <Label Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt."/>
+                            </Grid>
+                        </accordion:AccordionItem.Content>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="ExpandeCollapse">
+                                    <VisualState Name="Expanded" >
+                                        <VisualState.Setters>
+                                            <Setter Property="HeaderBackground" Value="{StaticResource ExpandedColor}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState Name="Collapsed">
+                                        <VisualState.Setters>
+                                            <Setter Property="HeaderBackground" Value="{StaticResource CollapsedColor}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </accordion:AccordionItem>
+
+                    <accordion:AccordionItem>
+                        <accordion:AccordionItem.Header>
+                            <Grid>
+                                <Label Text="Veggie burger" AutomationId="Header5" FontAttributes="Bold"/>
+                            </Grid>
+                        </accordion:AccordionItem.Header>
+                        <accordion:AccordionItem.Content>
+                            <Grid>
+                                <Label Text="Veggie burger, garden burger, or tofu burger uses a meat analogue, a meat substitute such as tofu, textured vegetable protein, seitan (wheat gluten), Quorn, beans, grains or an assortment of vegetables, which are ground up and formed into patties."/>
+                            </Grid>
+                        </accordion:AccordionItem.Content>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="ExpandeCollapse">
+                                    <VisualState Name="Expanded" >
+                                        <VisualState.Setters>
+                                            <Setter Property="Header">
+                                                <Setter.Value>
+                                                    <Grid>
+                                                        <Label Text="Expanded Label" AutomationId="Header5" FontAttributes="Bold"/>
+                                                    </Grid>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState Name="Collapsed">
+                                        <VisualState.Setters>
+                                            <Setter Property="Header">
+                                                <Setter.Value>
+                                                    <Grid>
+                                                        <Label Text="Collapsed Label" AutomationId="Header5" FontAttributes="Bold"/>
+                                                    </Grid>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </VisualStateManager.VisualStateGroups>
+                    </accordion:AccordionItem>
+                </accordion:SfAccordion.Items>
+            </accordion:SfAccordion>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

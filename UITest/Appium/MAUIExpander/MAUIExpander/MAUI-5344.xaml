@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIExpander.MAUI_5344"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             Title="MAUI_5344">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Wire Event for Expander3" Clicked="WireEventforExpander3_Clicked"/>
+            <Button Text="NullHeader" Clicked="NullHeader_Clicked"/>
+            <Button Text="NullContent" Clicked="NullContent_Clicked"/>
+            <syncfusion:SfExpander IsExpanded="False"  x:Name="expander">
+                <syncfusion:SfExpander.Header >
+                    <Label x:Name="label1" TextColor="#495F6E" Text="Veg Pizza" BackgroundColor="Tomato" FontSize="22" VerticalOptions="CenterAndExpand"/>
+
+                </syncfusion:SfExpander.Header>
+
+                <syncfusion:SfExpander.Content >
+                    <Label x:Name="ContentLabel1" TextColor="#303030"  Text="Veg pizza is prepared with meet vegetarian standards" 
+                                   VerticalTextAlignment="Center" BackgroundColor="Aqua" LineBreakMode="WordWrap" FontSize="20"/>
+
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+            <syncfusion:SfExpander IsExpanded="False"  x:Name="expander2" 
+                                   Collapsed="expander2_Collapsed"
+                                   Collapsing="expander2_Collapsing"
+                                   Expanded="expander2_Expanded"
+                                   Expanding="expander2_Expanding">
+                <syncfusion:SfExpander.Header >
+                    <Label x:Name="label2" TextColor="#495F6E" Text="Veggie Pizza" BackgroundColor="Tomato" FontSize="22" VerticalOptions="CenterAndExpand"/>
+
+                </syncfusion:SfExpander.Header>
+
+                <syncfusion:SfExpander.Content >
+                    <Label x:Name="ContentLabel2" TextColor="#303030"  Text="Pacific Veggie pizza is a great choice if you believe more is more. It has (almost) everything: roasted red peppers, baby spinach, onions, mushrooms, tomatoes, and black olives and not by  by not including any meat or animal tissue products." 
+                                   VerticalTextAlignment="Center" BackgroundColor="Aqua" LineBreakMode="WordWrap" FontSize="20"/>
+
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+            <syncfusion:SfExpander IsExpanded="False"  x:Name="expander3">
+                <syncfusion:SfExpander.Header >
+                    <Label x:Name="label3" TextColor="#495F6E" Text="Non Veg Pizza" BackgroundColor="Tomato" FontSize="22" VerticalOptions="CenterAndExpand"/>
+
+                </syncfusion:SfExpander.Header>
+
+                <syncfusion:SfExpander.Content >
+                    <Label x:Name="ContentLabel3" TextColor="#303030"  Text="Non-veg pizza is prepared by including the meat and animal tissue products." 
+                                   VerticalTextAlignment="Center" BackgroundColor="Aqua" LineBreakMode="WordWrap" FontSize="20"/>
+
+                </syncfusion:SfExpander.Content>
+            </syncfusion:SfExpander>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

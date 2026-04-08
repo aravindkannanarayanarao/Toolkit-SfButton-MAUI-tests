@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample1.RTL"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             Title="RTL">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button AutomationId="Change_Flowdirection" Text="RTL" Clicked="RTL_Clicked"/>
+                <syncfusion:SfExpander x:Name="expander" HeaderIconPosition="End" FlowDirection="MatchParent" IsExpanded="True">
+                    <syncfusion:SfExpander.Header FlowDirection="MatchParent">
+                        <Grid Padding="10">
+                            <Label Text="Invoice Date" HorizontalOptions="StartAndExpand" FontSize="16" VerticalOptions="CenterAndExpand"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <BoxView/>
+                            <Grid Padding="15,0,0,0" Grid.Row="1">
+                                <Label Text="11.03 AM, 15 January 2019"  HorizontalOptions="StartAndExpand" FontSize="16" VerticalOptions="CenterAndExpand"/>
+                            </Grid>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander IsExpanded="True">
+                    <syncfusion:SfExpander.Header>
+                        <Grid Padding="10">
+                            <Label Text="Item (s)"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label TextColor="#414141"  HorizontalOptions="StartAndExpand" Text="2018 Subaru Outback"/>
+                            <Label TextColor="#414141"  HorizontalOptions="StartAndExpand" Text="All-Weather Mats" Grid.Row="1"/>
+                            <Label TextColor="#414141"  HorizontalOptions="StartAndExpand" Text="Door Edge Guard Kit" Grid.Row="2"/>
+                            <Label TextColor="#414141" HorizontalOptions="StartAndExpand" Text="Rear Bumper Cover" Grid.Row="3"/>
+                            <Label TextColor="#414141" HorizontalOptions="StartAndExpand" Text="Total Amount Paid" FontAttributes="Bold" Grid.Row="4"/>
+                            <Label TextColor="#414141" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="$35,705.00" Grid.Column="1"/>
+                            <Label TextColor="#414141" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="$105.00" Grid.Row="1" Grid.Column="1"/>
+                            <Label TextColor="#414141" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="$100.00" Grid.Row="2" Grid.Column="1"/>
+                            <Label TextColor="#414141" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="$95.00" Grid.Row="3" Grid.Column="1"/>
+                            <Label TextColor="#414141" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="$36,000.00" FontAttributes="Bold" Grid.Row="4" Grid.Column="1"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander x:Name="Expander">
+                    <syncfusion:SfExpander.Header>
+                        <Grid Padding="10">
+                            <Label Text="Invoice Date" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+
+                    <syncfusion:SfExpander.Content>
+                        <Grid>
+                            <Label HeightRequest="50" HorizontalOptions="StartAndExpand" Text="11.03 AM, 15 January 2019" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander>
+                    <syncfusion:SfExpander.Header>
+                        <Grid Padding="10">
+                            <Label Text="Item (s)" HorizontalOptions="StartAndExpand"  VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="2018 Subaru Outback" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="All-Weather Mats" HorizontalOptions="StartAndExpand" Grid.Row="1"/>
+                            <Label Text="Door Edge Guard Kit" HorizontalOptions="StartAndExpand" Grid.Row="2"/>
+                            <Label Text="Rear Bumper Cover" HorizontalOptions="StartAndExpand" Grid.Row="3"/>
+                            <Label Text="Total Amount Paid" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Grid.Row="4"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$35,705.00" Grid.Column="1"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$105.00" Grid.Row="1" Grid.Column="1"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$100.00" Grid.Row="2" Grid.Column="1"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$95.00" Grid.Row="3" Grid.Column="1"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$36,000.00" FontAttributes="Bold" Grid.Row="4" Grid.Column="1"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander>
+
+                    <syncfusion:SfExpander.Header>
+                        <Grid Padding="10">
+                            <Label Text="Payment Details" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Card Payment" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="Third-Party coupons" HorizontalOptions="StartAndExpand" Grid.Row="1"/>
+                            <Label  Text="Total Amount Paid" HorizontalOptions="StartAndExpand" FontAttributes="Bold" Grid.Row="2"/>
+                            <Label HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$31,000.00" Grid.Column="1"/>
+                            <Label  HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" Text="$5,000.00" Grid.Row="1" Grid.Column="1"/>
+                            <Label HorizontalTextAlignment="End"  HorizontalOptions="EndAndExpand" Text="$36,000.00" FontAttributes="Bold" Grid.Row="2" Grid.Column="1"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

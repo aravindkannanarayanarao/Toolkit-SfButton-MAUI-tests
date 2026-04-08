@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accrod="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.MAUI_26124"
+             Title="MAUI_26124">
+    <ContentPage.Content>
+        <accrod:SfAccordion x:Name="accordion" >
+            <accrod:SfAccordion.Items>
+                <accrod:AccordionItem x:Name="item0">
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header" FontAttributes="Bold"/>
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header1" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem x:Name="Item2" IsExpanded="True" >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header2" FontAttributes="Bold"/>
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header3" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header4" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header5" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header6" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header7" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header8" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header9" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header10" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header11" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header12" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header13" FontAttributes="Bold"/>
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header14" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header15" FontAttributes="Bold"/>
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header16" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header17" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header18" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem >
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header19" FontAttributes="Bold"  />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header20" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header21" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header22" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header23" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header24" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+                <accrod:AccordionItem>
+                    <accrod:AccordionItem.Header>
+                        <Grid>
+                            <Label Text="Header25" FontAttributes="Bold" />
+                        </Grid>
+                    </accrod:AccordionItem.Header>
+                    <accrod:AccordionItem.Content>
+                        <Grid>
+                            <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                        </Grid>
+                    </accrod:AccordionItem.Content>
+                </accrod:AccordionItem>
+            </accrod:SfAccordion.Items>
+        </accrod:SfAccordion>
+    </ContentPage.Content>
+</ContentPage>

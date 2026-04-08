@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sync="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
+             x:Class="AccordionSample.Themes"
+             Title="Themes">
+
+    <ContentPage.Resources>
+        <syncTheme:SyncfusionThemeDictionary>
+            <syncTheme:SyncfusionThemeDictionary.MergedDictionaries>
+                <syncTheme:DarkThemeColors />
+            </syncTheme:SyncfusionThemeDictionary.MergedDictionaries>
+        </syncTheme:SyncfusionThemeDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal">
+                <Button AutomationId="LightTheme" Text="LightTheme" Clicked="LightTheme_Clicked" WidthRequest="70"/>
+                <Button AutomationId="OverrideColor" Text="OverrideColor" Clicked="OverrideColor_Clicked" WidthRequest="70"/>
+                <Button AutomationId="IconPosition" Text="IconPosition" Clicked="IconPosition_Clicked" WidthRequest="70"/>
+                <Button AutomationId="IsExpanded" Text="IsExpanded" Clicked="IsExpanded_Clicked" WidthRequest="70"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1">
+                <syncfusion:SfAccordion x:Name="Accordion">
+                    <syncfusion:SfAccordion.Items>
+
+                        <syncfusion:AccordionItem x:Name="item0">
+                            <syncfusion:AccordionItem.Header>
+                                <Grid>
+                                    <Label TextColor="{DynamicResource SfAccordionNormalHeaderIconColor}" Text="Cheese burger" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Header>
+                            <syncfusion:AccordionItem.Content>
+                                <Grid Padding="10,10,10,10" BackgroundColor="{DynamicResource SfAccordionNormalHeaderBackground}">
+                                    <Label TextColor="{DynamicResource SfAccordionNormalHeaderIconColor}" Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Content>
+                        </syncfusion:AccordionItem>
+
+                        <syncfusion:AccordionItem x:Name="item1">
+                            <syncfusion:AccordionItem.Header>
+                                <Grid>
+                                    <Label TextColor="{DynamicResource SfAccordionNormalHeaderIconColor}" Text="Veggie burger" HeightRequest="50" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Header>
+                            <syncfusion:AccordionItem.Content>
+                                <Grid Padding="10,10,10,10" BackgroundColor="{DynamicResource SfAccordionNormalHeaderBackground}">
+                                    <Label TextColor="{DynamicResource SfAccordionNormalHeaderIconColor}" Text="Veggie burger, garden burger, or tofu burger uses a meat analogue, a meat substitute such as tofu, textured vegetable protein, seitan (wheat gluten), Quorn, beans, grains or an assortment of vegetables, which are ground up and formed into patties." HeightRequest="50" VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Content>
+                        </syncfusion:AccordionItem>
+
+                    </syncfusion:SfAccordion.Items>
+                </syncfusion:SfAccordion>
+
+                <sync:SfExpander IsExpanded="True" x:Name="item2">
+                    <sync:SfExpander.Header>
+                        <Grid>
+                            <Label Text="Item (s)" TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </sync:SfExpander.Header>
+                    <sync:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="{DynamicResource SfExpanderNormalHeaderBackground}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="2018 Subaru Outback"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="All-Weather Mats" Grid.Row="1"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="Door Edge Guard Kit" Grid.Row="2"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="Rear Bumper Cover" Grid.Row="3"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="Total Amount Paid" FontAttributes="Bold" Grid.Row="4"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" HorizontalTextAlignment="End" Text="$35,705.00" Grid.Column="1"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" HorizontalTextAlignment="End" Text="$105.00" Grid.Row="1" Grid.Column="1"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" HorizontalTextAlignment="End" Text="$100.00" Grid.Row="2" Grid.Column="1"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" HorizontalTextAlignment="End" Text="$95.00" Grid.Row="3" Grid.Column="1"/>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" HorizontalTextAlignment="End" Text="$36,000.00" FontAttributes="Bold" Grid.Row="4" Grid.Column="1"/>
+                        </Grid>
+                    </sync:SfExpander.Content>
+                </sync:SfExpander>
+
+                <sync:SfExpander x:Name="item3">
+                    <sync:SfExpander.Header>
+                        <Grid>
+                            <Label TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" Text="Invoice Date" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </sync:SfExpander.Header>
+                    <sync:SfExpander.Content>
+                        <Grid>
+                            <Label HeightRequest="50" TextColor="{DynamicResource SfExpanderNormalHeaderIconColor}" BackgroundColor="{DynamicResource SfExpanderNormalHeaderBackground}" Text="11.03 AM, 15 January 2019" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </sync:SfExpander.Content>
+                </sync:SfExpander>
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

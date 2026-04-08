@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample1.MAUI_37743.MAUI_37743"
+             xmlns:local="clr-namespace:AccordionSample1.MAUI_37743"
+             Title="MAUI_37743">
+    <ContentPage.BindingContext>
+        <local:MAUI_37743_ViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <StackLayout BackgroundColor="Green">
+        <Button
+        Clicked="Button_Clicked"
+        HeightRequest="50"
+        Text="close page" />
+        <Button
+        Clicked="Add_Button_Clicked"
+        HeightRequest="50"
+        Text="Add Item"/>
+        <syncfusion:SfAccordion
+        x:Name="Accordion"
+        BackgroundColor="Blue"
+        BindableLayout.ItemsSource="{Binding Info}"
+        HeaderIconPosition="None">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <syncfusion:AccordionItem>
+                        <syncfusion:AccordionItem.Header>
+                            <Grid>
+                                <Label Text="{Binding Name}" />
+                            </Grid>
+                        </syncfusion:AccordionItem.Header>
+                        <syncfusion:AccordionItem.Content>
+                            <Grid>
+                                <Label Text="{Binding Description}" />
+                            </Grid>
+                        </syncfusion:AccordionItem.Content>
+                    </syncfusion:AccordionItem>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </syncfusion:SfAccordion>
+    </StackLayout>
+</ContentPage>

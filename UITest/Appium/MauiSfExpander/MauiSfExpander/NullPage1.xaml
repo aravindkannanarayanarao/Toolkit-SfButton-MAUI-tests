@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="MauiSfExpander.NullPage1"
+             Title="NullPage1">
+    <VerticalStackLayout>
+
+
+        <syncfusion:SfExpander x:Name="expander" AnimationDuration="200" IsExpanded="True"  HeaderIconPosition="Start" FlowDirection="RightToLeft">
+
+
+            <syncfusion:SfExpander.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="dotnet_bot.png" HeightRequest="30" WidthRequest="50"/>
+                    <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Header" FontSize="14" Grid.Column="1" VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </syncfusion:SfExpander.Header>
+
+
+
+
+            <syncfusion:SfExpander.Content >
+                <Grid Padding="18,8,0,18" >
+                    <Label CharacterSpacing="0.25" FontFamily="Roboto-Regular"  Text="Expander Content" FontSize="14" VerticalOptions="CenterAndExpand"/>
+                </Grid>
+            </syncfusion:SfExpander.Content>
+
+
+
+        </syncfusion:SfExpander>
+
+
+
+    </VerticalStackLayout>
+
+</ContentPage>

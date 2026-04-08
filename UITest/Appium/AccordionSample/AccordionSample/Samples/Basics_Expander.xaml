@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.Basics_Expander"
+             Title="Basics_Expander">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Master" AutomationId="masterPage">
+            <ContentPage.Content>
+                <ScrollView>
+                    <StackLayout>
+                        <Picker x:Name="IconPositionPicker" AutomationId="iconPosition" SelectedIndex="1" Title="IconPosition" SelectedIndexChanged="IconPositionPicker_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Start</x:String>
+                                    <x:String>End</x:String>
+                                    <x:String>None</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Picker AutomationId="HeaderBackgroundColor" SemanticProperties.Description="HeaderBackgroundColor" x:Name="headerBackgroundColor" Title="HeaderBackgroundColor" SelectedIndex="0" SelectedIndexChanged="HeaderBackgroundColor_SelectedIndexChanged">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yellow</x:String>
+                                    <x:String>Red</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Label Text="IsExpanded"></Label>
+                        <Switch AutomationId="expanded" IsToggled="False" Toggled="Switch_Toggled_1"></Switch>
+                        <Label Text="Enable RTL"></Label>
+                        <Switch AutomationId="rtl" IsToggled="False" Toggled="Switch_Toggled"></Switch>
+                    </StackLayout>
+                </ScrollView>
+            </ContentPage.Content>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <ContentPage Padding="10">
+                    <ContentPage.Content>
+                        <expander:SfExpander x:Name="expander">
+                            <expander:SfExpander.Header>
+                                <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Label AutomationId="header" Text="Fruits Tyeps with * Row height and withht lengthiest text in header" x:Name="fruits" FontAttributes="Bold" FontSize="Medium" ></Label>
+                                </StackLayout>
+                            </expander:SfExpander.Header>
+                            <expander:SfExpander.Content>
+                                <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout>
+                                        <StackLayout>
+                                            <Label Text="Bananas are high in potassium and contain good levels of protein and dietary fiber"></Label>
+                                        </StackLayout>
+                                        <StackLayout>
+                                            <Label Text="Orange (fruit) An orange is a type of citrus fruit that people often eat or they can sniff the skin when grinded into a smooth powder."></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ScrollView>
+                            </expander:SfExpander.Content>
+                        </expander:SfExpander>
+                    </ContentPage.Content>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

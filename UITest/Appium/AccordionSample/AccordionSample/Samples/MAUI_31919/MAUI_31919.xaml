@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample.MAUI_31919.MAUI_31919"
+             xmlns:local="clr-namespace:AccordionSample.MAUI_31919"
+             >
+
+    <FlyoutItem Route="animals"
+                Title="Animals"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Domestic"
+             Route="domestic"
+             Icon="paw.png">
+            <ShellContent Route="cats"
+                          Title="Accordion"
+                          ContentTemplate="{DataTemplate local:CatPage}" />
+        </Tab>
+
+        <ShellContent Route="monkeys"
+                      Title="Monkeys"
+                      ContentTemplate="{DataTemplate local:MonkeysPage}" />
+    </FlyoutItem>
+</Shell>

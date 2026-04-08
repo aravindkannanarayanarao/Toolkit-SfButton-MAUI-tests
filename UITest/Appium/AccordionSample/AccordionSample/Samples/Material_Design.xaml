@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample.Material_Design"
+             Title="Material_Design">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Button AutomationId="expander" Text="Expander" Clicked="Button_Clicked"/>
+            <Button AutomationId="accordion" Text="Accordion" Clicked="Button_Clicked_1"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

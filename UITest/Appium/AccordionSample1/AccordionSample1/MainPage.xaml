@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AccordionSample1.MainPage">
+
+    <StackLayout>
+        <ScrollView>
+            <FlexLayout Wrap="Wrap">
+                <Button AutomationId="Load_RTL_sample" Text="Sample" Clicked="Load_RTL_sample_Clicked"/>
+                <Button AutomationId="DynamicSizeSupport" Text="Dynamic_Size" Clicked="DynamicSizeSupport_Clicked"/>
+                <Button  Text="MAUI_38120" Clicked="MAUI_38120_Clicked"/>
+                <Button AutomationId="BindableAccordInGrid" Text="Accord In Grid" Clicked="Handle_Clicked"/>
+                <Button AutomationId="Navigation" Text="MAUI_37743" Clicked="Navigation_Clicked"/>
+                <Button AutomationId="MAUI_37449" Text="MAUI_37449" Clicked="MAUI_37449_Clicked"/>
+                <Button AutomationId="MAUI_37208" Text="MAUI_37208" Clicked="Button_Clicked"/>
+                <Button AutomationId="MAUI_40527" Text="MAUI_40527" Clicked="MAUI_40527_Clicked"/>
+                <Button AutomationId="MAUI_44611" Text="MAUI_44611" Clicked="MAUI_44611_Clicked"/>
+            </FlexLayout>
+        </ScrollView>
+    </StackLayout>
+
+</ContentPage>

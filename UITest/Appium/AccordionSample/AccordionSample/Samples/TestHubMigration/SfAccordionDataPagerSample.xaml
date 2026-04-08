@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.SfAccordionDataPagerSample"
+             Title="SfAccordion - DataPager">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            
+            <Label Text="SfAccordion DataPager Double Initialization Test"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#000000" />
+
+            <Label Text="Test Case ID: 117628"
+                   FontSize="12"
+                   TextColor="#666666" />
+
+            <!-- Control Area -->
+            <StackLayout Padding="10" BackgroundColor="#E8F4F8" Spacing="10">
+                <Label Text="Double Initialization Scenario" FontSize="14" FontAttributes="Bold" />
+                
+                <Label Text="This page tests that DataPager with double initialization does not throw a null reference exception."
+                       FontSize="12"
+                       TextColor="#333333"
+                       LineBreakMode="WordWrap" />
+                
+                <Button AutomationId="Start" SemanticProperties.Description="Start"
+                        Text="Start Test (Initialize)"
+                        Clicked="OnStartClicked"
+                        Padding="10"
+                        BackgroundColor="#0066CC" />
+            </StackLayout>
+
+            <!-- Accordion With DataPager -->
+            <StackLayout Padding="10" BackgroundColor="#E8F8E8" Spacing="5">
+                <Label Text="SfAccordion with DataPager" FontSize="14" FontAttributes="Bold" />
+                
+                <sf:SfAccordion AutomationId="AccordionDataPager">
+                    <sf:AccordionItem>
+                        <sf:AccordionItem.Header>
+                            <Label Text="Item 1" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Content 1" />
+                                <Button Text="DataPager Button 1" Padding="5" FontSize="12" />
+                                <Button Text="DataPager Button 2" Padding="5" FontSize="12" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem>
+                        <sf:AccordionItem.Header>
+                            <Label Text="Item 2" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Content 2" />
+                                <Button Text="DataPager Button 3" Padding="5" FontSize="12" />
+                                <Button Text="DataPager Button 4" Padding="5" FontSize="12" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem>
+                        <sf:AccordionItem.Header>
+                            <Label Text="Item 3" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Content 3" />
+                                <Button Text="DataPager Button 5" Padding="5" FontSize="12" />
+                                <Button Text="DataPager Button 6" Padding="5" FontSize="12" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                </sf:SfAccordion>
+            </StackLayout>
+
+            <!-- Status Label -->
+            <Label AutomationId="StatusLabel"
+                   Text="Status: Ready"
+                   FontSize="12"
+                   TextColor="#008000"
+                   Padding="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

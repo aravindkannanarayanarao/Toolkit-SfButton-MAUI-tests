@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:accrod="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.MAUI_23399"
+             Title="MAUI_23399">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button AutomationId="button" Text="Item1"></Button>
+                <Button Text="Item2"></Button>
+                <Button Text="AddItem" Clicked="Item_Clicked"></Button>
+                <accrod:SfAccordion x:Name="accordion" ExpandMode="MultipleOrNone" BackgroundColor="LightYellow">
+                    <accrod:SfAccordion.Items>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label AutomationId="header" Text="Courses completed at other colleges may be considered for transfer credit at Rensselaer. Entering freshmen may transfer a maximum of 32 credit hours; this includes AP/IB credits or other equivalent credits.
+
+How the credits are applied to a student's degree program depends on the student's choice of major. Students may need to complete additional course work to fulfill the specific program requirements. The student should consult with their adviser for additional details."></Label>
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="Courses completed at other colleges may be considered for transfer credit at Rensselaer. Entering freshmen may transfer a maximum of 32 credit hours; this includes AP/IB credits or other equivalent credits.
+
+How the credits are applied to a student's degree program depends on the student's choice of major. Students may need to complete additional course work to fulfill the specific program requirements. The student should consult with their adviser for additional details."></Label>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem IsExpanded="True" HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header1" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Courses completed at other colleges may be considered for transfer credit at Rensselaer. Entering freshmen may transfer a maximum of 32 credit hours; this includes AP/IB credits or other equivalent credits.
+
+How the credits are applied to a student's degree program depends on the student's choice of major. Students may need to complete additional course work to fulfill the specific program requirements. The student should consult with their adviser for additional details."></Label>
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="Courses completed at other colleges may be considered for transfer credit at Rensselaer. Entering freshmen may transfer a maximum of 32 credit hours; this includes AP/IB credits or other equivalent credits.
+
+How the credits are applied to a student's degree program depends on the student's choice of major. Students may need to complete additional course work to fulfill the specific program requirements. The student should consult with their adviser for additional details."></Label>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label AutomationId="header3" Text="Header3" FontAttributes="Bold"  />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header4" FontAttributes="Bold"  />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label AutomationId="header5" Text="Header5" FontAttributes="Bold"  />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header6" FontAttributes="Bold"  />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header7" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header8" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header9" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header10" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header11" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header12" FontAttributes="Bold" />
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header13" FontAttributes="Bold"/>
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                        <accrod:AccordionItem HeaderBackground="#D3D3D3">
+                            <accrod:AccordionItem.Header>
+                                <Grid>
+                                    <Label Text="Header14" FontAttributes="Bold"/>
+                                </Grid>
+                            </accrod:AccordionItem.Header>
+                            <accrod:AccordionItem.Content>
+                                <Grid>
+                                    <Label Text="The Accordion is a vertically collapsible content panel that displays one or more panels at a time within the available space."/>
+                                </Grid>
+                            </accrod:AccordionItem.Content>
+                        </accrod:AccordionItem>
+                    </accrod:SfAccordion.Items>
+                </accrod:SfAccordion>
+                <Button Text="Item4"></Button>
+                <Button Text="Item5"></Button>
+                <Button Text="Item6"></Button>
+                <Button Text="Item7"></Button>
+                <Button Text="Item8"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

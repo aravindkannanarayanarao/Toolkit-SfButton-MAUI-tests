@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.MAUI_32404.MAUI_32404"
+             xmlns:local="clr-namespace:AccordionSample"
+             Title="MAUI_32404">
+    <ContentPage.BindingContext>
+        <local:ExpanderList x:Name="ViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Button Text="Expander 1" AutomationId="changeIsExpandedExpander1" Clicked="Button_Clicked"/>
+                <Button Text="Expander 2" AutomationId="changeIsExpandedExpander2" Clicked="Button_Clicked1"/>
+            </StackLayout>
+            <StackLayout BindableLayout.ItemsSource="{Binding ExpanderItems}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <expander:SfExpander x:Name="expander1" BackgroundColor="AliceBlue" IsExpanded="{Binding IsExpanded}">
+                            <expander:SfExpander.Header>
+                                <Grid>
+                                    <Label Text="Expander header" HeightRequest="50" FontSize="Large"/>
+                                </Grid>
+                            </expander:SfExpander.Header>
+                            <expander:SfExpander.Content>
+                                <Grid>
+                                    <Label Text="Expander Content" HeightRequest="80" FontSize="Medium"/>
+                                </Grid>
+                            </expander:SfExpander.Content>
+                        </expander:SfExpander>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

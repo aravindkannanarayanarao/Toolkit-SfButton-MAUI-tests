@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:sync="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="AccordionSample.MAUI_29622"
+             xmlns:local="clr-namespace:AccordionSample"
+             Title="MAUI_29622">
+
+    <ContentPage.BindingContext>
+        <local:MAUI_29622_ViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <expander:SfExpander HeaderIconPosition="None" HeaderBackground="Transparent" BackgroundColor="Transparent" IsExpanded="True">
+            <expander:SfExpander.Header>
+                <Grid IsVisible="True" InputTransparent="True" HeightRequest="50" BackgroundColor="LightGray">
+                    <Label AutomationId="header" Text="Select a Supplier" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </expander:SfExpander.Header>
+            <expander:SfExpander.Content>
+                <sync:SfListView x:Name="listView" ItemsSource="{Binding Suppliers}" SelectionMode="None" ItemTapped="SfListView_ItemTapped">
+                    <sync:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Label VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Name}" FontSize="16" Margin="10,0,0,10"/>
+                        </DataTemplate>
+                    </sync:SfListView.ItemTemplate>
+                </sync:SfListView>
+            </expander:SfExpander.Content>
+        </expander:SfExpander>
+    </ContentPage.Content>
+</ContentPage>

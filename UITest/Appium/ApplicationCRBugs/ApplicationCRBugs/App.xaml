@@ -1,0 +1,23 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ApplicationCRBugs"
+             x:Class="ApplicationCRBugs.App"
+             xmlns:syncTheme="clr-namespace:Syncfusion.Maui.Themes;assembly=Syncfusion.Maui.Core"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="style" TargetType="syncfusion:SfAccordion">
+                <Setter Property="ExpandMode" Value="Multiple" />
+                <Setter Property="AnimationEasing" Value="SinInOut" />
+                <Setter Property="AnimationDuration" Value="400" />
+                <Setter Property="HeaderIconPosition" Value="Start" />
+                <Setter Property="ItemSpacing" Value="100" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

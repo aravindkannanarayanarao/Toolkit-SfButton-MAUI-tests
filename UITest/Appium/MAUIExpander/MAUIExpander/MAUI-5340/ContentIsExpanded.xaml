@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MAUIExpander"
+              xmlns:listView="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:popup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             x:Class="MAUIExpander.ContentIsExpanded">
+    <ContentPage.BindingContext>
+        <local:BookInfoRepository/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="stack">
+                <StackLayout>
+                    <Button Text="IsExpandedTrue" Clicked="IsExpandedTrue_Clicked"/>
+                    <Button Text="IsExpandedFalse" Clicked="IsExpandedFalse_Clicked"/>
+                    
+                    <Button Text="AddContent" Clicked="AddContent_Clicked"/>
+                    <Button Text="ChangeContent" Clicked="ChangeContent_Clicked"/>
+                    <Button Text="NullContent" Clicked="NullContent_Clicked" />
+
+                    <Button Text="AddSfListViewAsContent" Clicked="AddSfListViewAsContent_Clicked"/>
+                    <Button Text="AddPopUpAsContent" Clicked="AddPopUpAsContent_Clicked"/>
+                    <Button Text="AddImageAsContent" Clicked="AddImageAsContent_Clicked"/>
+                </StackLayout>
+                
+                <syncfusion:SfExpander  x:Name="Exp1" >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50" Padding="10,10,10,10">
+                            <Label TextColor="#495F6E" Text="Veg Pizza" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF" HeightRequest="100">
+                            <Label x:Name="ContentLabel1" TextColor="#303030" Text="Veg pizza is prepared with the items that meet vegetarian standards by not including any meat or animal tissue products." 
+                                   VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="Exp2"   >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E" Text="Image as Expander Content" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="Exp3"   >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E" Text="Cheese burger" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Label x:Name="ContentLabel3" TextColor="#303030" Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." HeightRequest="50" VerticalTextAlignment="Center"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="ListViewExpander" >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E" Text="ListView as Expander Content" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <listView:SfListView x:Name="listView"  
+                           SelectionMode="Single"
+                               ItemsSource="{Binding BookInfo}">
+                                <listView:SfListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Label x:Name="label" Text="{Binding BookName}" FontAttributes="Bold"/>
+                                    </DataTemplate>
+                                </listView:SfListView.ItemTemplate>
+                            </listView:SfListView>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander x:Name="PopUpExpander" >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E" Text="Popup as Expander Content" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Button TextColor="#303030" HeightRequest="50" x:Name="show" Text="Show Popup" Clicked="show_Clicked"/>
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+
+                <syncfusion:SfExpander x:Name="ComplexExpander" >
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E" Text="Grid as Expander Content" VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10" BackgroundColor="#FFFFFF">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0"  Text="Veg Burger" LineBreakMode="WordWrap" TextColor="#DE000000" FontFamily="Roboto-Medium" FontSize="{OnPlatform Android={OnIdiom Phone=15, Tablet=22}, iOS=16, UWP=14,MacCatalyst=16}" CharacterSpacing="0.1"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Cheese Pizza" TextColor="#666666" FontSize="{OnPlatform Default=10,UWP=12,MacCatalyst=12}" FontFamily="Roboto-Regular" HorizontalOptions="End" CharacterSpacing="0.15" Margin="0,0,11,0"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Garlic Bread"  TextColor="#666666" LineHeight="{OnPlatform iOS={OnIdiom Tablet=1.2, Default=1.025}, Default=1.2}" FontFamily="Roboto-Regular" FontSize="14" CharacterSpacing="0.1" Margin="0,4,0,0" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

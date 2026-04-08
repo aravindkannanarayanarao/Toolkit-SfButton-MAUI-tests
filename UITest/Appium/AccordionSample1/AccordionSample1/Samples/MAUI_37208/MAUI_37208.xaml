@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:acordion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample1.MAUI_37208"
+             Title="MAUI_37208">
+    <ContentPage.Content>
+        <ScrollView x:Name="scrollview">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Margin="15" BackgroundColor="White" >
+                    <Button Text="GUARDAR" AutomationId="changeVisibility" BackgroundColor="#532480" TextColor="White" Clicked="Button_Clicked"/>
+                </StackLayout>
+                <acordion:SfAccordion Grid.Row="1" x:Name="AcordeonLuz" BackgroundColor="Blue" IsVisible="True"
+                                        ExpandMode="SingleOrNone">
+                    <acordion:SfAccordion.Items>
+                        <acordion:AccordionItem x:Name="DatosLuz" IsExpanded="True">
+                            <acordion:AccordionItem.Header  HeaderBackgroundColor="#DDD">
+                                <Grid Padding="10">
+                                    <Label x:Name="AcordeonLuzHeaderLabel" Text="Abrir para rellenar datos"></Label>
+                                </Grid>
+                            </acordion:AccordionItem.Header>
+                            <acordion:AccordionItem.Content>
+                                <Grid>
+                                    <StackLayout x:Name="stack" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+                                        <Entry x:Name="LocationName" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Location Name" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationAddress" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Street" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationCity" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="City" Margin="30,10,30,0"/>
+                                        <StackLayout HeightRequest="100" IsVisible="False" x:Name="hiddenStack" BackgroundColor="Teal"/>
+                                        <Entry x:Name="LocationState" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="State" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationZip" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Postal Code" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Latitude" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Latitude" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Longitude" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Longitude" Margin="30,10,30,10"/>
+                                    </StackLayout>
+                                </Grid>
+                            </acordion:AccordionItem.Content>
+                        </acordion:AccordionItem>
+                    </acordion:SfAccordion.Items>
+                </acordion:SfAccordion>
+                <StackLayout Margin="15" Grid.Row="2" BackgroundColor="White" >
+                    <Button Text="GUARDAR" BackgroundColor="#532480" TextColor="White" Clicked="Button_Clicked"/>
+                </StackLayout>
+                <acordion:SfAccordion Grid.Row="3" x:Name="AcordeonLuz1" BackgroundColor="Blue" IsVisible="True"
+                                        ExpandMode="SingleOrNone">
+                    <acordion:SfAccordion.Items>
+                        <acordion:AccordionItem x:Name="DatosLuz1" IsExpanded="True">
+                            <acordion:AccordionItem.Header  HeaderBackgroundColor="#DDD">
+                                <Grid Padding="10">
+                                    <Label x:Name="AcordeonLuzHeaderLabel1" Text="Abrir para rellenar datos"></Label>
+                                </Grid>
+                            </acordion:AccordionItem.Header>
+                            <acordion:AccordionItem.Content>
+                                <Grid>
+                                    <StackLayout x:Name="stack1" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+                                        <Entry x:Name="LocationName1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Location Name" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationAddress1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Street" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationCity1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="City" Margin="30,10,30,0"/>
+                                        <StackLayout HeightRequest="100" IsVisible="False" x:Name="hiddenStack1" BackgroundColor="Teal"/>
+                                        <Entry x:Name="LocationState1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="State" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationZip1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Postal Code" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Latitude1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Latitude" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Longitude1" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Longitude" Margin="30,10,30,10"/>
+                                    </StackLayout>
+                                </Grid>
+                            </acordion:AccordionItem.Content>
+                        </acordion:AccordionItem>
+                    </acordion:SfAccordion.Items>
+                </acordion:SfAccordion>
+                <StackLayout Margin="15" Grid.Row="4" BackgroundColor="White" >
+                    <Button Text="GUARDAR" BackgroundColor="#532480" TextColor="White" Clicked="Button_Clicked"/>
+                </StackLayout>
+                <acordion:SfAccordion x:Name="AcordeonLuz11" Grid.Row="5" BackgroundColor="Blue" IsVisible="True"
+                                        ExpandMode="SingleOrNone">
+                    <acordion:SfAccordion.Items>
+                        <acordion:AccordionItem x:Name="DatosLuz11" IsExpanded="True">
+                            <acordion:AccordionItem.Header  HeaderBackgroundColor="#DDD">
+                                <Grid Padding="10">
+                                    <Label x:Name="AcordeonLuzHeaderLabel11" Text="Abrir para rellenar datos"></Label>
+                                </Grid>
+                            </acordion:AccordionItem.Header>
+                            <acordion:AccordionItem.Content>
+                                <Grid>
+                                    <StackLayout x:Name="stack11" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+                                        <Entry x:Name="LocationName11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Location Name" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationAddress11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Street" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationCity11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="City" Margin="30,10,30,0"/>
+                                        <StackLayout HeightRequest="100" IsVisible="False" x:Name="hiddenStack11" BackgroundColor="Teal"/>
+                                        <Entry x:Name="LocationState11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="State" Margin="30,10,30,0"/>
+                                        <Entry x:Name="LocationZip11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Postal Code" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Latitude11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Latitude" Margin="30,10,30,0"/>
+                                        <Entry x:Name="Longitude11" BackgroundColor="#202020" TextColor="GhostWhite"  PlaceholderColor="Silver" Placeholder="Longitude" Margin="30,10,30,10"/>
+                                    </StackLayout>
+                                </Grid>
+                            </acordion:AccordionItem.Content>
+                        </acordion:AccordionItem>
+                    </acordion:SfAccordion.Items>
+                </acordion:SfAccordion>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

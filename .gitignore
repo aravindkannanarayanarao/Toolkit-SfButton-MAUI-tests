@@ -1,0 +1,10 @@
+bin
+obj
+.vs
+*.apk
+report
+snapshots-diff
+snapshots-output
+.DS_Store
+*.user
+*.Zip

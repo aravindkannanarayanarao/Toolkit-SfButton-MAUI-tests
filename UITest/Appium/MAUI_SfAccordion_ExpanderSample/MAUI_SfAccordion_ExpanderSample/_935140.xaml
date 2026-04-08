@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfList="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:local="clr-namespace:MAUIExpander"
+             x:Class="MAUIExpander._935140">
+
+    <ContentPage.BindingContext>
+        <local:_935140BookInfoRepository x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Button Text="Expand" Clicked="Button_Clicked_1"/>
+        <Button Text="Collapse" Clicked="Button_Clicked_2"/>
+        <Button Text = "Animation Duration as 0" Clicked="Button_Clicked"/>
+    <Button Text = "Animation Duration as 8000" Clicked="Button_Clicked1"/>
+    <sfList:SfListView x:Name="listData" ScrollStateChanged="ScrollStateChanged" ItemsSource="{Binding BookInfo}" AllowSwiping="True" AllowGroupExpandCollapse="True" SwipeOffset="210" AutoFitMode="DynamicHeight" SelectionBackground="Transparent">
+        <sfList:SfListView.ItemTemplate>
+            <DataTemplate>
+                <Border>
+                        <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="Auto, *, Auto, *" RowSpacing="3" ColumnSpacing="5" Margin="5">
+                            <!-- <Label x:Name="label" Grid.Row="0" Text="{Binding Index}" />
+                            <Label Grid.Row="1" Text="Label2" />
+                            <Label Grid.Row="2" Text="Label3" />
+                            <Label Grid.Row="3" Text="Label4" /> -->
+
+                                <syncfusion:SfExpander Grid.Row="4" Grid.ColumnSpan="4" AnimationDuration="{Binding Duration, Mode=TwoWay}" IsExpanded="{Binding Expanded, Mode=TwoWay}">
+                                <syncfusion:SfExpander.Header>
+                                    <Grid ColumnDefinitions="Auto, *" ColumnSpacing="5" BackgroundColor="LightGreen">
+                                            <Border>
+                                                <Label Text="" />
+                                            </Border>
+                                        <Label Grid.Column="1" Text="{Binding BookName}" />
+                                    </Grid>
+                                </syncfusion:SfExpander.Header>
+
+                                <syncfusion:SfExpander.Content>
+                                    <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto, *, Auto, *" RowSpacing="3" ColumnSpacing="5">
+                                        <Border  BackgroundColor="#FEFF35">
+                                            <Label TextColor="#333319" Text="" />
+                                        </Border>
+                                        <Label Grid.Column="1" Text="{Binding BookName}"  />
+
+                                        <Border Grid.Column="2">
+                                            <Label Text=""/>
+                                        </Border>
+                                        <Label Grid.Column="3" Text="{Binding BookDescription}" />
+
+                                        <Border Grid.Row="1"  BackgroundColor="Black">
+                                            <Label Text=""/>
+                                        </Border>
+                                        <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding BookName}" />
+
+                                        <Border Grid.Row="2" >
+                                            <Label Text="" />
+                                        </Border>
+                                        <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding BookName}" />
+                                    </Grid>
+                                </syncfusion:SfExpander.Content>
+                            </syncfusion:SfExpander>
+                        </Grid>
+                </Border>
+            </DataTemplate>
+        </sfList:SfListView.ItemTemplate>
+    </sfList:SfListView>
+    </StackLayout>
+</ContentPage>

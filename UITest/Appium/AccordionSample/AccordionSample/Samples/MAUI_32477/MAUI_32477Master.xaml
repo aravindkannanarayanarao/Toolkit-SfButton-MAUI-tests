@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             x:Class="AccordionSample.MAUI_32477Master"
+             xmlns:local="clr-namespace:AccordionSample"
+             Title="MAUI_32477Master">
+    
+    <ContentPage.BindingContext>
+        <local:MAUI_32477MasterViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true" 
+              ItemsSource="{Binding MenuItems}">
+        <d:ListView.ItemsSource>
+            <x:Array Type="{x:Type local:MAUI_32477MasterMenuItem}">
+                <local:MAUI_32477MasterMenuItem Title="Start" TargetType="{x:Type local:StartView}"  />
+                <local:MAUI_32477MasterMenuItem Title="Other" TargetType="{x:Type local:OtherView}" />
+            </x:Array>
+            </d:ListView.ItemsSource>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
+                            <Label VerticalOptions="FillAndExpand" 
+                                   VerticalTextAlignment="Center" 
+                                   Text="{Binding Title}" 
+                                   FontSize="24"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <!--d:Text="{Binding .}"-->
+               
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+              xmlns:local="clr-namespace:MAUIExpander"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="MAUIExpander.Task_825074">
+
+
+    <ContentPage.Content>
+        <syncfusion:SfAccordion x:Name="accordion" ExpandMode="SingleOrNone" AutoScrollPosition="Top">
+            <syncfusion:SfAccordion.Items>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        <Label TextColor="#495F6E" Text="Item1" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Label TextColor="#303030" Text="Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger." 
+                                   VerticalTextAlignment="Center"/>
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        <Label TextColor="#495F6E" Text="Item2" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Label TextColor="#303030" Text="Hamburger accompanied Prepared wrbecue sauce is spread on top and grilled until" 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        <Label TextColor="#495F6E" Text="Item3" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Prepared wrbecue sauce is spread on top and grilled until the sauce" 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        
+                            <Label TextColor="#495F6E" Text="Item4" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists oftself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                        
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        <Label TextColor="#495F6E" Text="Item5" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the w" 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        <Label TextColor="#495F6E" Text="Item6" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        <Label TextColor="#303030" Text="Consists of a tself is amelt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger acurger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item7" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburge to allow it to melt term itse words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item8" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                        
+                            <Label TextColor="#303030" Text="Consists of a hamburger, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                       
+                            <Label TextColor="#495F6E" Text="Item9" HeightRequest="50" VerticalTextAlignment="Center"/>
+                        
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne.Hamburg it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item10" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburg. The term itsd, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item11" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburgering to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                       
+                            <Label TextColor="#495F6E" Text="Item12" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger,se. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item13" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger,hes cooking to allow it to melt.a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item14" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                                <Label TextColor="#303030" Text="Consists of a hamburger itself is a plly sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item15" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburger, t to melt.Hamburger accompan the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                     
+                            <Label TextColor="#495F6E" Text="Item16" HeightRequest="50" VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger, . The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                       
+                            <Label TextColor="#495F6E" Text="Item17" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger,The chinishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item18" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburgerd cheese The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompaniedlow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item19" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a ompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                        
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                       
+                            <Label TextColor="#495F6E" Text="Item20" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburger,iced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+
+                            <Label TextColor="#495F6E" Text="Item21" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consists of a hamburger, The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                     
+                            <Label TextColor="#495F6E" Text="Item22" HeightRequest="50" VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne.Hamburger" 
+                                   VerticalTextAlignment="Center"/>
+                      
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item23" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburgertse theoking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Content>
+
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                    
+                            <Label TextColor="#495F6E" Text="Item24" HeightRequest="50" VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                        
+                            <Label TextColor="#495F6E" Text="Item25" HeightRequest="50" VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                       
+                            <Label TextColor="#303030" Text="Consiseese. The ed, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                       
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                      
+                            <Label TextColor="#495F6E" Text="Item26" HeightRequest="50" VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                     
+                            <Label TextColor="#495F6E" Text="Item27" HeightRequest="50" VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with these is usrger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                       
+                            <Label TextColor="#495F6E" Text="Item28" HeightRequest="50" VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                      
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped with chili con carne.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                     
+                            <Label TextColor="#495F6E" Text="Item29" HeightRequest="50" VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburgerhe The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt.Hamburger accompanied with melted cheese. The term itself is a portmanteau of the words cheese and hamburger. The cheese is usually sliced, then added a short time before the hamburger finishes cooking to allow it to melt." 
+                                   VerticalTextAlignment="Center"/>
+                     
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+                <syncfusion:AccordionItem>
+                    <syncfusion:AccordionItem.Header>
+                     
+                            <Label TextColor="#495F6E" Text="Item30" HeightRequest="50" VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Header>
+                    <syncfusion:AccordionItem.Content>
+                     
+                            <Label TextColor="#303030" Text="Consists of a hamburger, with the patty topped then added a short time before the hamburger finishes cooking to allow then added a short time before the hamburger finishes cooking to all Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow Consists of a hamburgerhe term itself is  then added a short time before the hamburger finishes cooking to allow " 
+                                   VerticalTextAlignment="Center"/>
+                    
+                    </syncfusion:AccordionItem.Content>
+                </syncfusion:AccordionItem>
+            </syncfusion:SfAccordion.Items>
+        </syncfusion:SfAccordion>
+    </ContentPage.Content>
+</ContentPage>

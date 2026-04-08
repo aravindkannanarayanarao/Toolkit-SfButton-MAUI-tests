@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             xmlns:sync="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             xmlns:navigation="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             x:Class="AccordionSample.MAUI_29715"
+             xmlns:local="clr-namespace:AccordionSample"
+             Title="MAUI_29715">
+    <ContentPage.BindingContext>
+        <local:AccordionViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <navigation:SfNavigationDrawer x:Name="navigationDrawer">
+            <navigation:SfNavigationDrawer.DrawerSettings>
+                <navigation:DrawerSettings x:Name="secondDrawer" DrawerHeaderHeight="0" DrawerFooterHeight="0" Position="Right">
+                    <navigation:DrawerSettings.DrawerContentView>
+                        <StackLayout>
+                            <syncfusion:SfExpander IsExpanded="True">
+                                <syncfusion:SfExpander.Header>
+                                    <Grid>
+                                        <Label Text="Header" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="50"/>
+                                    </Grid>
+                                </syncfusion:SfExpander.Header>
+                                <syncfusion:SfExpander.Content>
+                                    <sync:SfListView ItemsSource="{Binding Info}">
+                                        <sync:SfListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid>
+                                                    <Label Text="{Binding Name}" FontSize="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </sync:SfListView.ItemTemplate>
+                                    </sync:SfListView>
+                                </syncfusion:SfExpander.Content>
+                            </syncfusion:SfExpander>
+                        </StackLayout>
+                    </navigation:DrawerSettings.DrawerContentView>
+                </navigation:DrawerSettings>
+
+            </navigation:SfNavigationDrawer.DrawerSettings>
+            <navigation:SfNavigationDrawer.ContentView>
+                <Button Text="Open Drawer" Clicked="Button_Clicked" AutomationId="OpenDrawer"/>
+            </navigation:SfNavigationDrawer.ContentView>
+        </navigation:SfNavigationDrawer>
+    </ContentPage.Content>
+</ContentPage>

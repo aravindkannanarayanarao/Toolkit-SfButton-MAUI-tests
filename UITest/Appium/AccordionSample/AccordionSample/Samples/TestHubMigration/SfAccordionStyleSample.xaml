@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.SfAccordionStyleSample"
+             Title="SfAccordion - GlobalApplication Styles">
+    
+    <ContentPage.Resources>
+        <!-- Global Style for Accordion - Test Case 180895 -->
+        <ResourceDictionary>
+            <Style TargetType="sf:SfAccordion" x:Key="GlobalAccordionStyle">
+                <Setter Property="ItemSpacing" Value="15" />
+            </Style>
+            
+            <Style TargetType="sf:AccordionItem" x:Key="GlobalAccordionItemStyle">
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            
+            <Label Text="SfAccordion Styling Tests"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="#000000" />
+
+            <!-- GlobalStyle Test - Test Case 180895 -->
+            <StackLayout Padding="10" BackgroundColor="#E8F4F8" Spacing="10">
+                <Label Text="GlobalStyle Test - Test Case ID: 180895" 
+                       AutomationId="GlobalStyle Test - Test Case ID: 180895"
+                       SemanticProperties.Description="GlobalStyle Test - Test Case ID: 180895"
+                       FontSize="14" 
+                       FontAttributes="Bold" />
+                
+                <Label Text="Expected Results:"
+                       FontSize="12"
+                       FontAttributes="Bold" />
+                <Label Text="1. Global style applied via resource dictionary&#x0a;2. Increased item spacing (15px between items)&#x0a;3. Consistent styling across accordion items"
+                       FontSize="11"
+                       LineBreakMode="WordWrap" />
+
+                <Label Text="Sample (Global Style with ItemSpacing):"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,0" />
+
+                <sf:SfAccordion AutomationId="AccordionGlobalStyle"
+                                AnimationDuration="500"
+                                Style="{StaticResource GlobalAccordionStyle}">
+                    <sf:AccordionItem AutomationId="AccordionItem1"
+                                     Style="{StaticResource GlobalAccordionItemStyle}">
+                        <sf:AccordionItem.Header>
+                            <Label Text="GlobalStyle Item 1 - Click to Expand" FontSize="14" FontAttributes="Bold" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Global style applied from resource dictionary" FontSize="12" FontAttributes="Bold" />
+                                <Label Text="ItemSpacing property: 15px" FontSize="11" />
+                                <Label Text="This creates consistent spacing between all accordion items" FontSize="11" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem AutomationId="AccordionItem2"
+                                     Style="{StaticResource GlobalAccordionItemStyle}">
+                        <sf:AccordionItem.Header>
+                            <Label Text="GlobalStyle Item 2 - Click to Expand" FontSize="14" FontAttributes="Bold"
+                                   AutomationId="GlobalStyle Item 2 - Click to Expand"
+                                   SemanticProperties.Description="GlobalStyle Item 2 - Click to Expand"/>
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Notice the 15px spacing between items" FontSize="12" FontAttributes="Bold" />
+                                <Label Text="Style applied uniformly across all accordion items" FontSize="11" />
+                                <Label Text="Resource-based styling provides consistency and reusability" FontSize="11" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem AutomationId="AccordionItem3"
+                                     Style="{StaticResource GlobalAccordionItemStyle}">
+                        <sf:AccordionItem.Header>
+                            <Label Text="GlobalStyle Item 3 - Click to Expand" FontSize="14" FontAttributes="Bold" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <VerticalStackLayout Padding="10" Spacing="5">
+                                <Label Text="Test Case 180895 - GlobalStyle Implementation:" FontSize="12" FontAttributes="Bold" />
+                                <Label Text="✓ Global style defined in ContentPage.Resources&#x0a;✓ ItemSpacing: 15px implemented&#x0a;✓ Uniform styling applied to all items" FontSize="11" LineBreakMode="WordWrap" />
+                            </VerticalStackLayout>
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                </sf:SfAccordion>
+            </StackLayout>
+
+            <!-- ApplicationLevel Style Test -->
+            <StackLayout Padding="10" BackgroundColor="#FFE8E8" Spacing="10">
+                <Label Text="ApplicationLevel Style Test - Test Case ID: 180906" 
+                       FontSize="14" 
+                       FontAttributes="Bold" />
+                
+                <Label Text="Expected Results:"
+                       FontSize="12"
+                       FontAttributes="Bold" />
+                <Label Text="1. Increased item spacing (15px between items)&#x0a;2. Properties applied directly to accordion&#x0a;3. Items render with proper spacing"
+                       FontSize="11"
+                       LineBreakMode="WordWrap" />
+
+                <Label Text="Sample (ItemSpacing=15, direct property):"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       Margin="0,10,0,0" />
+
+                <sf:SfAccordion AutomationId="AccordionApplicationLevel"
+                              ItemSpacing="15">
+                    <sf:AccordionItem AutomationId="AccordionItem1">
+                        <sf:AccordionItem.Header>
+                            <Label Text="ApplicationLevel Item 1" FontSize="14" FontAttributes="Bold" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <Label Text="Spacing applied via ItemSpacing property at application level" Padding="10" />
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem AutomationId="AccordionItem2">
+                        <sf:AccordionItem.Header>
+                            <Label Text="ApplicationLevel Item 2" FontSize="14" FontAttributes="Bold" AutomationId="ApplicationLevel Item 2" SemanticProperties.Description="ApplicationLevel Item 2"/>
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <Label Text="Properties set directly on SfAccordion element" Padding="10" />
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                    <sf:AccordionItem AutomationId="AccordionItem3">
+                        <sf:AccordionItem.Header>
+                            <Label Text="ApplicationLevel Item 3" FontSize="14" FontAttributes="Bold" />
+                        </sf:AccordionItem.Header>
+                        <sf:AccordionItem.Content>
+                            <Label Text="No style resources needed for application-level properties" Padding="10" />
+                        </sf:AccordionItem.Content>
+                    </sf:AccordionItem>
+                </sf:SfAccordion>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

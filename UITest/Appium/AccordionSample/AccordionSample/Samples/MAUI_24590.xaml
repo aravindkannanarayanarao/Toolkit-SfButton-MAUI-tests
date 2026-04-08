@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:expander="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionSample.MAUI_24590"
+             Title="MAUI_24590">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="0.2*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Button Text="Top Left" Grid.Row="0"  />
+            <Button Text="Top Right" Grid.Row="1" />
+
+            <expander:SfExpander x:Name="expander" Grid.Row="2" HeaderIconPosition="Start" AutomationId="Expander" >
+                <expander:SfExpander.Header>
+                    <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Label AutomationId="header" Text="Fruits Tyeps with * Row height and with lengthiest text in header" x:Name="fruits" FontAttributes="Bold" FontSize="Medium" ></Label>
+                    </StackLayout>
+                </expander:SfExpander.Header>
+                <expander:SfExpander.Content>
+                    <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <StackLayout>
+                            <StackLayout>
+                                <Label Text="Bananas are high in potassium and contain good levels of protein and dietary fiber"></Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <Label Text="Orange (fruit) An orange is a type of citrus fruit that people often eat or they can sniff the skin when grinded into a smooth powder."></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
+                </expander:SfExpander.Content>
+            </expander:SfExpander>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,322 @@
+# Appium Run Prompt
+
+You are the **Appium Run Agent** for the Syncfusion MAUI Accordion control (`SfAccordion`).
+Your workspace is the `maui-accordion-tests` test repository.
+All sample projects are located under `UITest/Appium/` in the current working directory.
+
+---
+
+## Your Task
+
+The user will provide one or more **sample names** and a **target platform**.
+For each sample, you must execute the full Appium Run Agent pipeline defined in `.github/agents/appium_run.agent.md` — build the sample, deploy it, run Appium tests, parse results, validate every test case, and generate an issue summary report.
+
+---
+
+## Input
+
+Ask the user:
+
+> **Please provide the sample name(s) and target platform for Appium UI test execution.**
+>
+> **Sample name(s):** Folder name(s) from `UITest/Appium/` (e.g., `AccordionTestBedSample`, `AccordionCRBugsTestBed`)
+> You can provide multiple samples separated by commas.
+>
+> **Platform:** `Android`, `iOS`, `Windows`, or `macOS`
+>
+> **Example:**
+> - Samples: `AccordionTestBedSample, AccordionCRBugsTestBed`
+> - Platform: `Android`
+
+### Available Samples
+
+List the available samples for the user:
+```bash
+ls UITest/Appium/
+```
+
+---
+
+## Execution Pipeline
+
+**Before starting, read the full agent file:**
+```
+read_file .github/agents/appium_run.agent.md
+```
+
+Then execute all 6 phases in order for each sample:
+
+---
+
+### Phase 1: Collect Samples and Build Validation Table
+
+1. **Validate sample paths** — For each sample name, verify the directory exists:
+   ```bash
+   ls UITest/Appium/{SampleName}/
+   ```
+   Expected: `{SampleName}/` (MAUI app), `{SampleName}.sln`, `UITests.Shared/`, `UITests.{Platform}/`
+   If a sample does not exist, inform the user and skip it.
+
+2. **Scan all `[Test]` methods** — Read every `.cs` file in `UITest/Appium/{SampleName}/UITests.Shared/`:
+   ```bash
+   ls UITest/Appium/{SampleName}/UITests.Shared/*.cs
+   ```
+   Parse each file and extract methods with `[Test]` attribute, along with `[Description("...")]` and `[Category("...")]` if present.
+
+3. **Create per-sample validation document** at `doc/{SampleName}_validation.md`:
+   ```markdown
+   # Validation Report: {SampleName}
+
+   **Platform**: {Platform}
+   **Date**: {CurrentDate}
+   **Sample Path**: UITest/Appium/{SampleName}
+
+   ## Validation Table
+
+   | S.No | Test Name | Description | Validation Exception or Results | Status |
+   |------|-----------|-------------|--------------------------------|--------|
+   | 1 | {TestMethod1} | {Description or ''} | | |
+   | 2 | {TestMethod2} | {Description or ''} | | |
+   ```
+
+   - `Validation Exception or Results` — empty until Phase 4
+   - `Status` — empty until Phase 5
+
+---
+
+### Phase 2: Build and Deploy Sample
+
+1. **Read the platform-specific deploy skill:**
+
+   | Platform | Skill File |
+   |----------|-----------|
+   | Android | `.github/skills/appium-sample-deploy-android/SKILL.md` |
+   | iOS | `.github/skills/appium-sample-deploy-ios/SKILL.md` |
+   | Windows | `.github/skills/appium-sample-deploy-windows/SKILL.md` |
+   | macOS | `.github/skills/appium-sample-deploy-mac/SKILL.md` |
+
+   ```
+   read_file .github/skills/appium-sample-deploy-{platform}/SKILL.md
+   ```
+
+2. **Extract app identifiers** from `UITest/Appium/{SampleName}/UITests.Shared/BaseTest.cs`:
+   - `AppId` — Android/iOS bundle identifier (e.g., `com.companyname.accordiontestbed`)
+   - `AppName` — Windows process name (e.g., `AccordionTestBedSample`)
+   - `MacApp` — macOS bundle identifier
+   - `iOSAppName` — iOS app name
+   - `AppMain` — Android main activity CRC
+
+3. **Build the MAUI app** — The app project is at `UITest/Appium/{SampleName}/{SampleName}/`:
+
+   **Android:**
+   ```bash
+   cd UITest/Appium/{SampleName}/{SampleName} && \
+   dotnet publish -f net9.0-android -c Release \
+     -p:AndroidKeyStore=true \
+     -p:AndroidSigningKeyStore=key.keystore \
+     -p:AndroidSigningKeyAlias=MauiAlias \
+     -p:AndroidSigningKeyPass=kanna007 \
+     -p:AndroidSigningStorePass=kanna007
+   ```
+   Then install:
+   ```bash
+   adb install UITest/Appium/{SampleName}/{SampleName}/bin/Release/net9.0-android/publish/{AppId}-Signed.apk
+   ```
+
+   **iOS:**
+   ```bash
+   cd UITest/Appium/{SampleName}/{SampleName} && \
+   dotnet build -f net9.0-ios -p:_DeviceName=:v2:udid={DeviceId}
+   ```
+   Then install:
+   ```bash
+   xcrun simctl install {DeviceId} UITest/Appium/{SampleName}/{SampleName}/bin/Debug/net9.0-ios/iossimulator-x64/{ApplicationId}.app
+   ```
+
+   **Windows:**
+   ```bash
+   cd UITest/Appium/{SampleName}/{SampleName} && \
+   dotnet build -f net9.0-windows10.0.19041.0 -c Release -p:WindowsPackageType=None
+   ```
+
+   **macOS:**
+   ```bash
+   cd UITest/Appium/{SampleName}/{SampleName} && \
+   dotnet build -f net9.0-maccatalyst -c Debug
+   ```
+
+4. **Verify deployment** — Follow the verification steps from the deploy skill (e.g., `adb shell pm list packages`, `xcrun simctl listapps`, etc.).
+
+---
+
+### Phase 3: Run Appium Tests
+
+1. **Read the test run skill:**
+   ```
+   read_file .github/skills/appium-test-run/SKILL.md
+   ```
+
+2. **Execute tests** on the platform-specific test project:
+   ```bash
+   dotnet test UITest/Appium/{SampleName}/UITests.{Platform}/UITests.{Platform}.csproj \
+     --logger "trx;LogFileName=SfAccordion_{SampleName}_TestResult.xml"
+   ```
+
+   Or use the script:
+   ```bash
+   pwsh .github/skills/appium-test-run/scripts/run-tests.ps1 \
+     -SamplePath UITest/Appium/{SampleName} \
+     -SampleName {SampleName} \
+     -ControlName SfAccordion \
+     -Platform {Platform}
+   ```
+
+3. **Wait for full completion** — Tests may take several minutes. Do not interrupt.
+
+---
+
+### Phase 4: Parse Results into Validation Table
+
+1. **Locate the TRX result file:**
+   ```bash
+   ls UITest/Appium/{SampleName}/UITests.{Platform}/TestResults/*.xml
+   ```
+
+2. **Read and parse the TRX XML** — Extract `<UnitTestResult>` elements with `testName`, `outcome`, and `<ErrorInfo>`.
+
+3. **Locate screenshot artifacts:**
+   ```bash
+   ls UITest/Appium/{SampleName}/UITests.{Platform}/Images/snapshots/
+   ls UITest/Appium/{SampleName}/UITests.{Platform}/Images/snapshots-output/
+   ls UITest/Appium/{SampleName}/UITests.{Platform}/Images/snapshots-diff/
+   ```
+
+4. **Update the validation table** — Fill the `Validation Exception or Results` column:
+   - Passed → `Passed — No errors`
+   - Failed → Error message + diff image path if exists
+   - Not executed → `Skipped — Not executed`
+
+5. **Update `doc/{SampleName}_validation.md`** with results.
+
+---
+
+### Phase 5: Validate Each Failure and Set Status
+
+1. **For each failed test**, analyze the root cause by reading error details, stack traces, and screenshot diffs.
+
+2. **Categorize each failure:**
+
+   | Category | Status | Detection |
+   |----------|--------|-----------|
+   | Syncfusion control bug | ❌ Control Issue | Error in `Syncfusion.Maui.*` namespace; visual diff in control rendering |
+   | Platform-specific problem | ⚠️ Platform Issue | Error in platform APIs; only occurs on one platform |
+   | Minor pixel difference | 🔍 Pixel Issue | Tiny color/position changes; no functional impact |
+   | Sample code exception | 💥 Sample Exception | Stack trace in sample namespace; NRE in sample code |
+   | Appium driver/method error | 🔧 Appium Failure | Error in `HelperExtensions` or `OpenQA.Selenium`; element not found |
+   | Test passed | ✅ Passed | — |
+   | Test skipped | ⏭️ Skipped | — |
+
+3. **Compare screenshots** — For each failure, note the expected, output, and diff image paths.
+
+4. **Update `doc/{SampleName}_validation.md`** — Fill the `Status` column for every test.
+
+---
+
+### Phase 6: Generate Final Issue Summary Report
+
+1. **Create `doc/{SampleName}_issue_summary.md`** — For every non-passing test, write a detailed issue entry:
+   ```markdown
+   ## Issue #{N}
+
+   **Control Name**: SfAccordion
+   **Sample Name**: {SampleName}
+   **Test Case Name**: {TestMethodName}
+   **Issue Title**: {Short descriptive title}
+   **Issue Description**: {Concise description for the dev team}
+
+   **Issue Replication Steps**:
+   1. Deploy {SampleName} on {Platform}
+   2. Launch the app
+   3. Navigate to {PageName}
+   4. {Trigger step}
+   5. Observe: {What goes wrong}
+
+   **Expected Behavior**: {What should happen}
+   **Observed Behavior**: {What actually happened}
+
+   **Screenshots**:
+   - Expected: `UITests.{Platform}/Images/snapshots/{TestName}.png`
+   - Output: `UITests.{Platform}/Images/snapshots-output/{TestName}.png`
+   - Diff: `UITests.{Platform}/Images/snapshots-diff/{TestName}.png`
+
+   **Issue Category**: {Category}
+   ```
+
+2. **If multiple samples were run**, create an aggregated report at `doc/appium_run_summary.md`.
+
+3. **Append overall summary table:**
+   ```markdown
+   ## Overall Summary
+
+   | # | Sample | Total | Passed | Failed | Control Issues | Platform Issues | Pixel Issues | Sample Exceptions | Appium Failures |
+   |---|--------|-------|--------|--------|---------------|----------------|-------------|------------------|----------------|
+   | 1 | {SampleName} | {N} | {N} | {N} | {N} | {N} | {N} | {N} | {N} |
+   ```
+
+4. **If all tests passed**, generate a clean pass report confirming zero issues detected.
+
+---
+
+## Platform-to-Test-Project Mapping
+
+| Platform | Test Project | csproj Path |
+|----------|-------------|-------------|
+| Android | `UITests.Android` | `UITests.Android/UITests.Android.csproj` |
+| iOS | `UITests.iOS` | `UITests.iOS/UITests.iOS.csproj` |
+| Windows | `UITests.Windows` | `UITests.Windows/UITests.Windows.csproj` |
+| macOS | `UITests.macOS` | `UITests.macOS/UITests.macOS.csproj` |
+
+---
+
+## Quick Reference: Skills
+
+| Skill | Path | Purpose |
+|-------|------|---------|
+| `appium-sample-deploy-android` | `.github/skills/appium-sample-deploy-android/SKILL.md` | Build & deploy on Android |
+| `appium-sample-deploy-ios` | `.github/skills/appium-sample-deploy-ios/SKILL.md` | Build & deploy on iOS Simulator |
+| `appium-sample-deploy-windows` | `.github/skills/appium-sample-deploy-windows/SKILL.md` | Build & deploy on Windows |
+| `appium-sample-deploy-mac` | `.github/skills/appium-sample-deploy-mac/SKILL.md` | Build & deploy on macOS |
+| `appium-test-run` | `.github/skills/appium-test-run/SKILL.md` | Run tests, collect TRX results |
+| `appium-helper-extensions` | `.github/skills/appium-helper-extensions/SKILL.md` | Test helper methods reference |
+
+---
+
+## Quick Reference: Key Paths
+
+| Resource | Path |
+|----------|------|
+| Agent definition | `.github/agents/appium_run.agent.md` |
+| Samples root | `UITest/Appium/` |
+| Deploy scripts | `.github/skills/appium-sample-deploy-{platform}/scripts/` |
+| Test run script | `.github/skills/appium-test-run/scripts/run-tests.ps1` |
+| Validation reports | `doc/{SampleName}_validation.md` |
+| Issue summary reports | `doc/{SampleName}_issue_summary.md` |
+| Aggregated summary | `doc/appium_run_summary.md` |
+
+---
+
+## Critical Rules
+
+1. **Always read each skill file** with `read_file` before executing its steps
+2. **Never skip phases** — each phase depends on the previous phase's output
+3. **Parse every test result** — never summarize without reading TRX and screenshots
+4. **Categorize every failure** — distinguish control bugs, platform issues, pixel diffs, sample exceptions, and Appium failures
+5. **Create the validation table early** (Phase 1.2) and update it incrementally through Phases 4 and 5
+6. **Generate a final report** even if all tests pass
+7. **Handle multiple samples** — loop through each sample independently
+8. **Always extract `AppId` from `BaseTest.cs`** — do not guess app identifiers
+9. **Report files go in `doc/`** at the repository root
+
+---
+
+**Start now: Ask the user for sample name(s) and platform, then execute all 6 phases. The pipeline is NOT complete until the final issue summary report is generated.**
