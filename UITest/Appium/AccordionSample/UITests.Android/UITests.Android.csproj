@@ -6,7 +6,6 @@
 		<Nullable>enable</Nullable>
 		<IsTestProject>true</IsTestProject>
 		<RootNamespace>UITests</RootNamespace>
-		<RunSettingsFilePath>$(MSBuildProjectDirectory)/test.runsettings</RunSettingsFilePath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)' == 'Debug'">

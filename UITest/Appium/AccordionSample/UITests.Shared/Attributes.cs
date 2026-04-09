@@ -34,19 +34,4 @@ namespace AccordionScripts1
         iOS = 2,
         Android = 4,
     }
-
-    /// <summary>
-    /// Specifies the target device UDID for a test class or individual test method.
-    /// When applied at method level, it overrides the class-level attribute.
-    /// Example: [TargetDevice("emulator-5554")]
-    /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class TargetDevice : Attribute
-    {
-        public string Udid { get; set; }
-        public TargetDevice(string udid)
-        {
-            Udid = udid;
-        }
-    }
 }

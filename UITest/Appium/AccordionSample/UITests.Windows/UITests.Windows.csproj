@@ -28,12 +28,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.Appium/Syncfusion.UITestHelpers.Appium.csproj" />
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.AssertVerification/Syncfusion.UITestHelpers.AssertVerification.csproj" />
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.Core/Syncfusion.UITestHelpers.Core.csproj" />
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.ExtendReport/Syncfusion.UITestHelpers.ExtendReport.csproj" />
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.NUnit/Syncfusion.UITestHelpers.NUnit.csproj" />
-	  <ProjectReference Include="../src/Syncfusion.UITestHelpers.Screenshot/Syncfusion.UITestHelpers.Screenshot.csproj" />
+	  <PackageReference Include="Syncfusion.UITestHelpers.Appium" Version="*" />
+		<PackageReference Include="Syncfusion.UITestHelpers.ExtendReport" Version="*" />
+	  <PackageReference Include="Syncfusion.UITestHelpers.Core" Version="*" />
+	  <PackageReference Include="Syncfusion.UITestHelpers.NUnit" Version="*" />		<PackageReference Include="Syncfusion.UITestHelpers.Screenshot" Version="*" />
 	</ItemGroup>
 
 </Project>
