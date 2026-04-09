@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using Syncfusion.Maui.Core.Hosting;
+﻿using Syncfusion.Maui.Core.Hosting;
 using Microsoft.Maui.LifecycleEvents;
 
 namespace AccordionSample
