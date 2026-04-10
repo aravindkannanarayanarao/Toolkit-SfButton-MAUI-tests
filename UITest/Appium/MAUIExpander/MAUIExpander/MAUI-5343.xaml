@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIExpander.MAUI_5343"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Expander;assembly=Syncfusion.Maui.Expander"
+             Title="MAUI_5343">
+    <ContentPage.Content>
+
+            <StackLayout x:Name="stackLayout">
+                <Grid ColumnDefinitions="*,*,*"
+                      RowDefinitions="*,*,*">
+                    <Button Text="ChangeFlowDirection"
+                            HeightRequest="50"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Clicked="Button_Clicked" />
+                    <Button Text="IconPosition"
+                            HeightRequest="50"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Clicked="Button_Clicked_2" />
+                    <Button Text="IconPositionNone"
+                            Clicked="Button_Clicked_5"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            HeightRequest="50" />
+                    <Button Text="ChangeParentFlowDirection"
+                            Clicked="Button_Clicked_9"
+                            HeightRequest="50"
+                            Grid.Row="1"
+                            Grid.Column="1" />
+                    <Button Text="Change Header"
+                            HeightRequest="50"
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Clicked="Button_Clicked_8" />
+                    <Button Text="LeftToRight"
+                            HeightRequest="50"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Clicked="Button_Clicked_3" />
+                <Button Text="IconPosition"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Clicked="Button_Clicked_4" />
+            </Grid>
+                <syncfusion:SfExpander x:Name="expander"
+                                   FlowDirection="MatchParent"
+                                   HeaderIconColor="BlueViolet">
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E"
+                                   Text="Veg Pizza"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10"
+                              BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030"
+                                   Text="Veg pizza is prepared with the items that meet vegetarian standards by not including any meat or animal tissue products."
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="expander1"
+                                       HeaderIconColor="Red"
+                                       HeaderIconPosition="Start">
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E"
+                                   Text="Non-veg Pizza"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10"
+                              BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030"
+                                   Text="Non-veg pizza is prepared by including the meat and animal tissue products."
+                                   HeightRequest="50"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="expander2"
+                                       HeaderIconColor="Red"
+                                       HeaderIconPosition="None">
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Label TextColor="#495F6E"
+                                   Text="Non-veg Pizza"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10"
+                              BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030"
+                                   Text="Non-veg pizza is prepared by including the meat and animal tissue products."
+                                   HeightRequest="50"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="expander3"
+                                       HeaderIconColor="Red"
+                                       HeaderIconPosition="Start">
+                    <syncfusion:SfExpander.Header>
+                        <StackLayout>
+                            <Label TextColor="#495F6E"
+                                   Text="Non-veg Pizza"
+                                   VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10"
+                              BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030"
+                                   Text="Non-veg pizza is prepared by including the meat and animal tissue products."
+                                   HeightRequest="50"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+                <syncfusion:SfExpander x:Name="expander4"
+                                       HeaderIconColor="Red"
+                                       HeaderIconPosition="End">
+                    <syncfusion:SfExpander.Header>
+                        <Grid HeightRequest="50">
+                            <Image Source="people_circle1.png" />
+                        </Grid>
+                    </syncfusion:SfExpander.Header>
+                    <syncfusion:SfExpander.Content>
+                        <Grid Padding="10,10,10,10"
+                              BackgroundColor="#FFFFFF">
+                            <Label TextColor="#303030"
+                                   Text="Non-veg pizza is prepared by including the meat and animal tissue products."
+                                   HeightRequest="50"
+                                   VerticalTextAlignment="Center" />
+                        </Grid>
+                    </syncfusion:SfExpander.Content>
+                </syncfusion:SfExpander>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
